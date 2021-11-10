@@ -23,7 +23,8 @@ handleFishCatch = (e) => {
     .then((data) => {
         console.log(data)
         this.toggle();
-        this.props.updateFishes(data); 
+        this.props.updateFishes(data);
+        window.location.reload(); 
     })
 }
 

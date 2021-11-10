@@ -3,6 +3,7 @@ import { Row, Col, CardGroup, Card, CardImg, CardBody, CardTitle, CardSubtitle, 
 import "./Home.css"
 import EditFish from '../functionality/EditFish';
 import DeleteFish from '../functionality/DeleteFish';
+import LikeFish from '../functionality/LikeFish';
 
 class Home extends Component {
     constructor(props) {
@@ -42,7 +43,9 @@ class Home extends Component {
         <CardBody>
         <div className="interact">
             <div className="likeRelease">
-        <span className="likes"><i class="far fa-thumbs-up"></i>{fish?.likes?.length}</span>
+        <span className="likes"><LikeFish fish={fish} updateFishes={this.props.updateFishes} sessionToken={this.props.sessionToken}/></span>
+        </div>
+        <div>
         <span className="releaseTag" style={{display: fish.catchAndRelease == true ? "auto" : "none" }}><i class="fas fa-check"></i>RELEASED!</span>
         </div>
         <div className="editDelete">

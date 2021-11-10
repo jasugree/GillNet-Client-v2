@@ -23,6 +23,8 @@ class DeleteFish extends Component {
             console.log(data) 
             this.toggle();
             this.props.updateFishes(data, true);
+            window.location.reload();
+
             
         })
         .catch((error) => {

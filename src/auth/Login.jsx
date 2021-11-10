@@ -33,6 +33,7 @@ handleSubmit = (e) => {
         console.log('GO HERE GO HERE')
         localStorage.setItem("profileImage",data.user.profileImage)
         localStorage.setItem("userName",data.user.userName)
+        localStorage.setItem("userid",data.user.id)
         const userName = localStorage.getItem("userName");
         console.log(userName)
         window.location.reload();
