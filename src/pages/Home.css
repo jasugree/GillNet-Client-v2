@@ -1,0 +1,148 @@
+.fishCards {
+	padding: 50px;
+	max-width: 1500px;
+	margin: auto;
+}
+.fishCards .card {
+	background-color: white;
+	border: none;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+
+.profileDetails {
+	display: flex;
+	text-align: left;
+	align-items: center;
+	padding: 15px;
+}
+.postProfileImage img {
+	height: 45px;
+	width: 45px;
+	border-radius: 100px;
+	margin-right: 15px;
+}
+.card-body {
+	text-align: left;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.releaseTag {
+	background: #f3f3f3;
+	border: solid rgba(0, 0, 0, 0.25) 1px;
+	padding: 5px 10px 5px 2px;
+	border-radius: 300px;
+	font-size: 12px;
+	font-family: "Assistant", sans-serif;
+	font-weight: 700;
+	margin-left: 10px;
+}
+.interact {
+	padding: 10px 0px 4px 0px;
+	display: flex;
+	align-items: center;
+}
+.interact .fas,
+.interact .far {
+	color: #38a3a5;
+}
+.editDelete {
+	margin-left: auto;
+	text-align: right;
+	align-items: center;
+	display: flex;
+}
+.editDelete div:first-child {
+	margin-right: auto;
+	padding-right: 5px;
+}
+
+.editDelete .fas {
+	margin: 0px;
+}
+.editDelete .fas:hover {
+	cursor: pointer;
+	color: #22577a;
+}
+
+.releaseTag .fas {
+	background: #57cc99;
+	border-radius: 300px;
+	padding: 5px;
+	font-size: 12px;
+	color: white;
+}
+.card-text {
+	color: #3d3d3d;
+	font-size: 16px;
+	letter-spacing: normal;
+	line-height: normal;
+	border-top: solid rgba(0, 0, 0, 0.25) 1px;
+	border-bottom: solid rgba(0, 0, 0, 0.25) 1px;
+	margin-top: 10px;
+	margin-left: -16px;
+	margin-right: -16px;
+	padding: 16px;
+	margin-bottom: 0;
+}
+.card-img {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+.catchDetails p {
+	color: black;
+}
+.catchDetails {
+	display: flex;
+}
+
+.catchDetails .row {
+	width: 50%;
+}
+.catchDetails .row {
+	margin-left: 0px;
+	margin-right: 0px;
+	padding: 10px;
+}
+.catchDetails .row {
+	padding: 0;
+}
+.catchDetails .row:first-child {
+	border-right: solid rgba(0, 0, 0, 0.25) 1px;
+}
+.catchDetails .row div:first-child {
+	border-bottom: solid rgba(0, 0, 0, 0.25) 1px;
+}
+.catchDetails .row div {
+	padding: 10px;
+}
+
+.catchDetails .row div p {
+	margin-bottom: 0;
+}
+
+.catchDetails {
+	background-color: #f3f3f3;
+	margin: auto -16px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+dd {
+	margin-bottom: 0;
+}
+dd,
+dt {
+	font-size: 14px;
+	line-height: normal;
+}
+
+.cardDate {
+	font-family: "Assistant", sans-serif;
+	font-weight: 700;
+	font-size: 12px;
+	opacity: 0.5;
+	margin-top: 10px;
+}

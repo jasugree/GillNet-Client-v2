@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap");
+
+.col {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.authForm {
+	width: 100%;
+	max-width: 600px;
+	padding: 5%;
+	border: #57cc99 4px solid;
+	border-radius: 20px;
+	margin: auto;
+	margin-bottom: 15px;
+}
+
+.wrapper {
+	width: 90%;
+}
+
+.auth-logo {
+	margin-bottom: 50px !important;
+}
+
+input.formfield,
+#state {
+	background-color: transparent;
+	border-radius: 1000px;
+	border: #57cc99 2px solid;
+	color: #63869d;
+	padding: 0.75em;
+	font-family: "Assistant", sans-serif;
+	letter-spacing: 0.03em;
+}
+
+input.formfield::placeholder {
+	color: #ffffff50;
+}
+
+input.formfield:focus {
+	background-color: transparent;
+	border: #80ed99 2px solid !important;
+	box-shadow: none !important;
+	color: white;
+	font-family: "Assistant", sans-serif;
+	letter-spacing: 0.03em;
+}
+
+label.fieldlabel {
+	color: white;
+	background-color: #22577a;
+	margin-bottom: 0px;
+	position: relative;
+	bottom: -12px;
+	padding-left: 10px;
+	padding-right: 10px;
+	left: 25px;
+	font-family: "Orbitron", sans-serif;
+	font-weight: 900;
+	letter-spacing: 0.1em;
+}
+
+.mb-3 {
+	text-align: left;
+	width: 100%;
+}
+
+.btn.loginbutton {
+	background-color: #57cc99;
+	font-family: "Orbitron", sans-serif;
+	font-weight: 900;
+	border-radius: 1000px;
+	width: 50%;
+	margin-top: 10px;
+}
+
+.btn.loginbutton:hover {
+	background-color: #80ed99;
+}
+
+p {
+	color: white;
+	font-family: "Assistant", sans-serif;
+	letter-spacing: 0.03em;
+	font-size: 1.2em;
+}
+.auth-toggle-link {
+	font-weight: 700;
+	color: #57cc99;
+	letter-spacing: 0em;
+	text-decoration: none;
+	transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+}
+
+.auth-toggle-link:hover {
+	color: #80ed99;
+	transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	box-shadow: 0 0 0 30px #22577a inset !important;
+	color: white !important;
+	transition: all 0s;
+	-webkit-text-fill-color: white;
+	-webkit-box-shadow: 0 0 0px 1000px #000 inset;
+	transition: background-color 5000s ease-in-out 0s;
+}
+
+#state input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	box-shadow: 0 0 0 30px #22577a inset !important;
+	color: black !important;
+	transition: all 0s;
+	-webkit-text-fill-color: black;
+	-webkit-box-shadow: 0 0 0px 1000px #000 inset;
+	transition: background-color 5000s ease-in-out 0s;
+}
