@@ -37,7 +37,7 @@ class LikeFish extends Component {
 
         return ( 
             <div>
-            <span className="editButton" onClick={this.toggleLike}><i className={ this.props.fish?.likes?.includes(parseInt(userid)) ? "fas fa-thumbs-up" : "far fa-thumbs-up"} ></i>{this.props.fish?.likes?.length}</span>
+            <span className="editButton" onClick={this.toggleLike}><i className={"fas fa-thumbs-up"} style={{opacity: this.props.fish?.likes?.includes(parseInt(this.props.user?.id)) ? "1" : ".25" }} ></i>{this.props.fish?.likes?.length}</span>
             </div>
          );
     }

@@ -44,7 +44,7 @@ handleUpdateFish = (e) => {
       const userName = localStorage.getItem("userName");
         return ( 
             <div>
-                <span className="editButton" onClick={this.toggle} style={{display: this.props.fish?.user?.userName == userName ? "auto" : "none" }}><i class="fas fa-pen"></i></span>
+                <span className="editButton" onClick={this.toggle} style={{display: this.props.fish?.user?.userName == this.props.user?.userName ? "auto" : "none" }}><i class="fas fa-pen"></i></span>
       <Modal isOpen={this.state.modal} toggle={this.toggle}>
       <Form onSubmit={this.handleUpdateFish}>
         <ModalHeader toggle={this.toggle}>Update Your Catch</ModalHeader>

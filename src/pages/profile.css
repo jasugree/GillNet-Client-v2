@@ -15,28 +15,45 @@
 }
 .topHalf h1 {
 	padding-left: 20px;
-	margin-top: 55px;
+	margin-top: 10px;
 	font-family: "Orbitron", sans-serif;
 	font-weight: 900;
 	color: white;
+	box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
+
+h2 {
+	font-family: "Orbitron", sans-serif;
+	font-weight: 900;
+	font-size: 23px;
+	color: #3d3d3d;
+	border-bottom: solid 2px #38a3a550;
+	margin: auto;
+	max-width: 70%;
+	padding-bottom: 10px;
+}
+
 .bottomHalf {
 	background-color: #f3f3f3;
-	margin-top: -75px;
+	margin-top: -100px;
 	min-height: 150px;
 	text-align: left;
 	padding-left: 30px;
 	padding-right: 100px;
 	padding-top: 15px;
 	display: flex;
+	flex-direction: column;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
 	padding-bottom: 35px;
+	box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
 .ProfileprofileImage {
 	border-radius: 4000px;
 	border: solid #57cc99 8px;
 	height: 200px;
+	width: 200px;
+	object-fit: cover;
 	box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 	padding: 0px;
 	vertical-align: middle;
@@ -46,17 +63,21 @@
 .profileCard {
 	width: 100%;
 	border-radius: 30px;
-	box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
 .details {
+	font-family: "Assistant", sans-serif;
+	font-weight: normal;
+	color: #3d3d3d;
 	background-color: #f3f3f3;
 	box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 	min-width: 200px;
-	margin-top: 40px;
+	margin-top: 0px;
+	margin-left: 225px;
 	border-radius: 10px;
+	margin-bottom: 25px;
 }
 .description {
-	padding-left: 25px;
+	margin-left: 225px;
 }
 .join {
 	background: #57cc99;
@@ -65,8 +86,13 @@
 	border-top-right-radius: 10px;
 }
 .otherDets {
-	padding: 25px;
+	padding: 10px 25px;
 }
+
+span.title {
+	font-weight: 900;
+}
+
 .profileHeader {
 	margin-bottom: 25px;
 	margin-top: 50px;
@@ -75,9 +101,65 @@
 }
 .myFish {
 	background-color: #f3f3f3;
-	padding: 30px;
+	padding: 15px;
 	width: 100%;
 	border-radius: 10px;
 	box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 	margin-bottom: 50px;
+}
+
+.myFishCards {
+	padding: 0px;
+	max-width: 1500px;
+	margin: auto;
+}
+
+.myFishCards .card-text {
+	height: auto;
+}
+
+.myFishCards .card {
+	background-color: white;
+	border: none;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+	width: 100%;
+}
+hr.detailBreak {
+	margin: 10px 0px;
+}
+
+.userFishGear {
+	align-items: flex-start;
+}
+
+@media only screen and (max-width: 700px) {
+	.topHalf {
+		flex-direction: column;
+		padding-bottom: 75px;
+	}
+	.details,
+	.description {
+		margin-left: 0px;
+	}
+	.bottomHalf {
+		margin-top: 0px;
+		padding: 0px 20px 20px 20px;
+		border-bottom-left-radius: 0px !important;
+		border-bottom-right-radius: 0px !important;
+	}
+	.details {
+		margin-top: -65px;
+	}
+	.profileHeader {
+		margin-top: 0px;
+	}
+	.topHalf {
+		border-top-left-radius: 0px !important;
+		border-top-right-radius: 0px !important;
+	}
+	.profileCard {
+		padding: 0px;
+		border-radius: 0px;
+	}
 }

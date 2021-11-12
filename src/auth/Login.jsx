@@ -31,11 +31,12 @@ handleSubmit = (e) => {
         this.props.history.push("/home")
         console.log(data.user)
         console.log('GO HERE GO HERE')
-        localStorage.setItem("profileImage",data.user.profileImage)
-        localStorage.setItem("userName",data.user.userName)
-        localStorage.setItem("userid",data.user.id)
-        const userName = localStorage.getItem("userName");
-        console.log(userName)
+        // localStorage.setItem("profileImage",data.user.profileImage)
+        // localStorage.setItem("userName",data.user.userName)
+        // localStorage.setItem("userid",data.user.id)
+        // localStorage.setItem("firstName",data.user.firstName)
+        // localStorage.setItem("lastName",data.user.lastName)
+        this.props.updateUser(data.user);
         window.location.reload();
     })
     .catch((error) => {

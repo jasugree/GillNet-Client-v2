@@ -36,10 +36,10 @@ render(){
 				<Col style={{ backgroundColor: "#22577a" }}>
 					<Router>
 						<Route exact path="/">
-							<Login updateToken={this.props.updateToken}/>
+							<Login updateToken={this.props.updateToken} updateUser={this.props.updateUser}/>
 						</Route>
 						<Route exact path="/register">
-							<Register updateToken={this.props.updateToken}/>
+							<Register updateToken={this.props.updateToken} updateUser={this.props.updateUser}/>
 						</Route>
 					</Router>
 				</Col>

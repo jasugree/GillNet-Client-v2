@@ -19,7 +19,7 @@ import {
 import "../nav/nav.css";
 import FishPic from "./FishPic";
 
-class FishCreate extends Component {
+class GearCreate extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -68,9 +68,9 @@ class FishCreate extends Component {
 		return (
 			<div>
 				<li className="navItem" onClick={this.toggle}>
-					<i class="fas fa-fish"></i>
+					<i class="fas fa-toolbox"></i>
 					<br />
-					<span>Log a Catch</span>
+					<span>Add Tackle Gear</span>
 				</li>
 				<Modal isOpen={this.state.modal} toggle={this.toggle}>
 					<Form onSubmit={this.handleFishCatch}>
@@ -194,4 +194,4 @@ class FishCreate extends Component {
 	}
 }
 
-export default FishCreate;
+export default GearCreate;

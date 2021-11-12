@@ -46,7 +46,7 @@ class DeleteFish extends Component {
         const userName = localStorage.getItem("userName");
         return ( 
             <div>
-                <span className="editButton" onClick={this.toggle} style={{display: this.props.fish?.user?.userName == userName ? "auto" : "none" }}><i className="fas fa-backspace"></i></span>
+                <span className="editButton" onClick={this.toggle} style={{display: this.props.fish?.user?.userName == this.props.user?.userName ? "auto" : "none" }}><i className="fas fa-backspace"></i></span>
       <Modal isOpen={this.state.modal} toggle={this.toggle}>
         <ModalHeader toggle={this.toggle}>Delete Fish</ModalHeader>
         <ModalBody className="create-modal">
