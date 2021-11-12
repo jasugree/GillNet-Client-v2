@@ -19,6 +19,10 @@ class Others extends Component {
 		this.state = {};
 	}
 
+	componentDidMount() {
+		this.props.fetchUsers();
+	}
+
 	render() {
 		console.log(this.props.users);
 		console.log("USERS ARE ABOVE^^^");

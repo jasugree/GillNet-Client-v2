@@ -123,3 +123,22 @@ input:-webkit-autofill:active {
 	-webkit-box-shadow: 0 0 0px 1000px #000 inset;
 	transition: background-color 5000s ease-in-out 0s;
 }
+.auth-logo {
+	width: 300px;
+	margin: auto;
+}
+@media only screen and (max-width: 700px) {
+	.row {
+		display: block !important;
+	}
+	.form.col {
+		padding: 50px 0px !important;
+	}
+	.authWrapper {
+		height: 30vh !important;
+	}
+	.auth-logo {
+		width: 200px;
+		margin-bottom: 20px !important;
+	}
+}

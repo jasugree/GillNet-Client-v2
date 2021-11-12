@@ -68,7 +68,7 @@ class FishCreate extends Component {
 		return (
 			<div>
 				<li className="navItem" onClick={this.toggle}>
-					<i class="fas fa-fish"></i>
+					<i className="fas fa-fish"></i>
 					<br />
 					<span>Log a Catch</span>
 				</li>

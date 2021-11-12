@@ -77,7 +77,8 @@ class Profile extends Component {
 							<h2>{this.props.user?.firstName}'s Recent Catches</h2>
 							<Row lg={1} className="g-4 myFishCards">
 								{this.props.fishes
-									.sort((a, b) => {
+									.filter((f) => this.props.user.id === f.userId)
+									?.sort((a, b) => {
 										return (
 											new Date(b.createdAt).getTime() -
 											new Date(a.createdAt).getTime()
@@ -130,6 +131,7 @@ class Profile extends Component {
 															<div className="editDelete">
 																<div className="editButton">
 																	<EditFish
+																		profile={true}
 																		fish={fish}
 																		updateFishes={this.props.updateFishes}
 																		sessionToken={this.props.sessionToken}
@@ -137,6 +139,7 @@ class Profile extends Component {
 																</div>
 																<div className="deleteButton">
 																	<DeleteFish
+																		profile={true}
 																		fish={fish}
 																		updateFishes={this.props.updateFishes}
 																		sessionToken={this.props.sessionToken}

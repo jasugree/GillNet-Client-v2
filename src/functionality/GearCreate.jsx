@@ -68,7 +68,7 @@ class GearCreate extends Component {
 		return (
 			<div>
 				<li className="navItem" onClick={this.toggle}>
-					<i class="fas fa-toolbox"></i>
+					<i className="fas fa-toolbox"></i>
 					<br />
 					<span>Add Tackle Gear</span>
 				</li>

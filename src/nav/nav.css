@@ -54,7 +54,6 @@
 	text-decoration: none;
 	list-style-type: none;
 	text-align: left;
-	font-family: "Assistant", sans-serif;
 	padding: 0px;
 	transition: all 0.2s ease;
 	-webkit-transition: all 0.2s ease;
@@ -229,6 +228,9 @@
 .navMenu br {
 	display: none;
 }
+.mobileLogOut {
+	display: none;
+}
 
 @media only screen and (max-width: 700px) {
 	.navWrapper,
@@ -285,7 +287,7 @@
 		margin-left: 0px !important;
 	}
 	.fishCards {
-		padding: 20px 20px;
+		padding: 20px 0px;
 	}
 	.navItem:hover {
 		padding: 20px 0px;
@@ -294,5 +296,32 @@
 		background-color: auto;
 		transition: all 0.4s ease;
 		-webkit-transition: all 0.4s ease;
+	}
+	.mobileLogOut {
+		display: block;
+		background: #f3f3f3;
+		width: 45px;
+		height: 45px;
+		border-radius: 100px;
+		padding-top: 7px;
+		margin-left: 10px;
+		box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+	}
+	.mobileLogOut a {
+		color: #22577a;
+		font-size: 20px;
+	}
+	.greeting p {
+		margin-bottom: 0px;
+		font-size: 20px;
+	}
+	.greeting {
+		height: 75px;
+	}
+	.pageContent {
+		margin-top: 75px;
+	}
+	.details {
+		text-align: center;
 	}
 }

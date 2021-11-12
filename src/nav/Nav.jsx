@@ -38,8 +38,8 @@ class Nav extends Component {
 				this.setState({ users: UserData });
 			})
 			.catch((error) => {
-				console.log("Error", error);
-				alert("Something went wrong. Please try again.");
+				console.error("Error", error);
+				alert("Something went wrong. GET ALL USERS.");
 				return;
 			});
 	};
@@ -61,7 +61,7 @@ class Nav extends Component {
 			})
 			.catch((error) => {
 				console.log("Error", error);
-				alert("Something went wrong. Please try again.");
+				alert("Something went wrong. GET ALL FISH.");
 				return;
 			});
 	};
@@ -77,9 +77,20 @@ class Nav extends Component {
 		}
 	};
 
+	updateProfile = (user, update = false) => {
+		if (update) {
+			this.setState({
+				user: [...this.state.user.filter((u) => u.id !== user.id), user],
+			});
+			this.fetchPost();
+		} else {
+			this.setState({ user: [...this.state.user, user] });
+		}
+	};
+
 	componentDidMount() {
 		this.fetchPost();
-		this.fetchUsers();
+		// this.fetchUsers();
 	}
 	//   componentDidUpdate(prevprops, prevstate){
 	//     if(prevprops.sessionToken !== this.props.sessionToken){
@@ -122,14 +133,14 @@ class Nav extends Component {
 						<ul className="navMenu">
 							<Link to="/home">
 								<li className="navItem">
-									<i class="fas fa-home"></i>
+									<i className="fas fa-home"></i>
 									<br />
 									<span>Home</span>
 								</li>
 							</Link>
 							<Link to="/nearby">
 								<li className="navItem">
-									<i class="far fa-compass"></i>
+									<i className="far fa-compass"></i>
 									<br />
 									<span>Catches Nearby</span>
 								</li>
@@ -144,21 +155,21 @@ class Nav extends Component {
 							/>
 							<Link to="/others">
 								<li className="navItem">
-									<i class="fas fa-users"></i>
+									<i className="fas fa-users"></i>
 									<br />
 									<span>Others In Your Area</span>
 								</li>
 							</Link>
 							<Link to="/profile">
 								<li className="navItem">
-									<i class="fas fa-user"></i>
+									<i className="fas fa-user"></i>
 									<br />
 									<span>My Profile</span>
 								</li>
 							</Link>
 							<Link to="/" onClick={this.props.clearToken} className="logout">
 								<li className="navItem logout">
-									<i class="fas fa-sign-out-alt"></i>
+									<i className="fas fa-sign-out-alt"></i>
 									<br />
 									<span>Logout</span>
 								</li>
@@ -171,10 +182,10 @@ class Nav extends Component {
 						</p>
 						<ul className="footerMenu">
 							<li className="footerItem">
-								<i class="fas fa-user-plus"></i>Invite a friend!
+								<i className="fas fa-user-plus"></i>Invite a friend!
 							</li>
 							<li className="footerItem">
-								<i class="fas fa-question-circle"></i>Need Help?
+								<i className="fas fa-question-circle"></i>Need Help?
 							</li>
 						</ul>
 					</div>
@@ -188,6 +199,7 @@ class Nav extends Component {
 							updateUser={this.props.updateUser}
 							sessionToken={this.props.sessionToken}
 							updateFishes={this.updateFishes}
+							user={this.props.user}
 						/>
 						<img
 							src={
@@ -197,6 +209,11 @@ class Nav extends Component {
 							alt="profileImage"
 							className="app-logo"
 						/>
+					</div>
+					<div className="mobileLogOut">
+						<Link to="/" onClick={this.props.clearToken} className="logout">
+							<i className="fas fa-sign-out-alt"></i>
+						</Link>
 					</div>
 				</div>
 
@@ -217,6 +234,7 @@ class Nav extends Component {
 							users={this.state.users}
 							sessionToken={this.props.sessionToken}
 							updateFishes={this.updateFishes}
+							fetchUsers={this.fetchUsers}
 							user={this.props.user}
 						/>
 					</Route>
