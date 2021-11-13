@@ -15,7 +15,7 @@ class Nav extends Component {
 	constructor(props) {
 		super(props);
 		this.toggle = this.toggle.bind(this);
-		this.state = { fishes: [], users: [], dropdownOpen: false };
+		this.state = { fishes: [], users: [], gears: [], dropdownOpen: false };
 	}
 	toggle() {
 		this.setState({
@@ -40,6 +40,28 @@ class Nav extends Component {
 			.catch((error) => {
 				console.error("Error", error);
 				alert("Something went wrong. GET ALL USERS.");
+				return;
+			});
+	};
+
+	//GET GEAR OF USER
+	fetchMyGear = () => {
+		fetch("http://localhost:3000/gear/mine/", {
+			method: "GET",
+			headers: new Headers({
+				"Content-Type": "application/json",
+				Authorization: this.props.sessionToken,
+			}),
+		})
+			.then((res) => res.json())
+			.then((myGear) => {
+				console.log(myGear);
+				console.log("&*&&*&*& MY GEAR");
+				this.setState({ gears: myGear });
+			})
+			.catch((error) => {
+				console.log("Error", error);
+				alert("Something went wrong. Please try again. MINE");
 				return;
 			});
 	};
@@ -74,6 +96,28 @@ class Nav extends Component {
 			this.fetchPost();
 		} else {
 			this.setState({ fishes: [...this.state.fishes, fish] });
+		}
+	};
+
+	updateGears = (gear, update = false) => {
+		if (update) {
+			this.setState({
+				gears: [...this.state.gears.filter((g) => g.id !== gear.id), gear],
+			});
+			this.fetchMyGear();
+		} else {
+			this.setState({ gears: [...this.state.gears, gear] });
+		}
+	};
+
+	updateUsers = (user, update = false) => {
+		if (update) {
+			this.setState({
+				users: [...this.state.users.filter((u) => u.id !== user.id), user],
+			});
+			this.fetchUsers();
+		} else {
+			this.setState({ users: [...this.state.users, user] });
 		}
 	};
 
@@ -152,6 +196,7 @@ class Nav extends Component {
 							<GearCreate
 								sessionToken={this.props.sessionToken}
 								updateFishes={this.updateFishes}
+								updateGears={this.updateGears}
 							/>
 							<Link to="/others">
 								<li className="navItem">
@@ -227,7 +272,12 @@ class Nav extends Component {
 						/>
 					</Route>
 					<Route exact path="/nearby">
-						<Nearby />
+						<Nearby
+							fishes={this.state.fishes}
+							sessionToken={this.props.sessionToken}
+							updateFishes={this.updateFishes}
+							user={this.props.user}
+						/>
 					</Route>
 					<Route exact path="/others">
 						<Others
@@ -236,6 +286,7 @@ class Nav extends Component {
 							updateFishes={this.updateFishes}
 							fetchUsers={this.fetchUsers}
 							user={this.props.user}
+							updateUsers={this.updateUsers}
 						/>
 					</Route>
 					<Route exact path="/profile">
@@ -243,7 +294,11 @@ class Nav extends Component {
 							fishes={this.state.fishes}
 							sessionToken={this.props.sessionToken}
 							updateFishes={this.updateFishes}
+							updateGears={this.updateGears}
 							user={this.props.user}
+							fetchMyGear={this.fetchMyGear}
+							gears={this.state.gears}
+							updateUsers={this.updateUsers}
 						/>
 					</Route>
 				</div>

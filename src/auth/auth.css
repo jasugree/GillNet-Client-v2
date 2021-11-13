@@ -117,9 +117,9 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
 	box-shadow: 0 0 0 30px #22577a inset !important;
-	color: black !important;
+	color: white !important;
 	transition: all 0s;
-	-webkit-text-fill-color: black;
+	-webkit-text-fill-color: white;
 	-webkit-box-shadow: 0 0 0px 1000px #000 inset;
 	transition: background-color 5000s ease-in-out 0s;
 }

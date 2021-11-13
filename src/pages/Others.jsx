@@ -11,6 +11,7 @@ import {
 	CardText,
 	Button,
 } from "reactstrap";
+import AdminDeleteUser from "../functionality/AdminDeleteUser";
 import "./Other.css";
 
 class Others extends Component {
@@ -24,17 +25,18 @@ class Others extends Component {
 	}
 
 	render() {
-		console.log(this.props.users);
+		console.log(this.props.user);
 		console.log("USERS ARE ABOVE^^^");
 
 		return (
-			<div>
+			<div className="userWrapper">
 				{!!this.props.users &&
 					this.props?.users
 						.filter(
 							(u) =>
 								this.props.user.city === u.city &&
-								this.props.user.state === u.state
+								this.props.user.state === u.state &&
+								this.props.user.id !== u.id
 						)
 						?.sort((a, b) => {
 							return (
@@ -52,7 +54,7 @@ class Others extends Component {
 							return (
 								<Row key={index} className="g-4 userCards">
 									<Card>
-										<CardBody>
+										<CardBody className="userCard">
 											<div>
 												<img
 													src={
@@ -63,10 +65,30 @@ class Others extends Component {
 													className="app-logo"
 												/>
 											</div>
-											<div>{user?.userName}</div>
-											<div>{user?.fishes.length}</div>
-											<div>
-												<Button>Message</Button>
+											<div className="userName">{user?.userName}</div>
+											<div className="catchCount">
+												<span className="catchTitle">Catches:</span>{" "}
+												{user?.fishes.length}
+											</div>
+											<div className="message">
+												<div>
+													<a href={"mailto:" + user?.fishes.length}>
+														<Button>Message</Button>
+													</a>
+												</div>
+												<div
+													style={{
+														display:
+															this.props.user.admin === true ? "auto" : "none",
+														marginLeft: "30px",
+													}}
+												>
+													<AdminDeleteUser
+														user={user}
+														sessionToken={this.props.sessionToken}
+														updateUsers={this.props.updateUsers}
+													/>
+												</div>
 											</div>
 										</CardBody>
 									</Card>

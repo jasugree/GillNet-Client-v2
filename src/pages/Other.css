@@ -1,18 +1,83 @@
 .userCards {
-	padding: 50px;
-	max-width: 1500px;
+	padding: 0px 50px;
+	max-width: 1000px;
 	margin: auto;
 }
 .userCards .card-text {
 	padding: 0px;
-	max-width: 1500px;
+	max-width: 1000px;
 	height: auto;
 }
 
 .userCards .card-body {
 	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.userCards .card-body div {
+	justify-content: space-evenly;
+	width: 25%;
+}
+.userCards .card-body div:last-child {
+	text-align: right;
 }
 
 .userCards img {
-	width: 20px;
+	width: 65px;
+	height: 65px;
+	object-fit: cover;
+	border-radius: 400px;
+	border: solid #57cc99 4px;
+	background: #57cc99;
+}
+.userCard div {
+	flex-basis: auto;
+}
+
+.userCard {
+	padding: 15px;
+}
+
+.userWrapper {
+	padding: 30px 0px;
+	min-height: calc(100vh - 91px);
+}
+
+.card {
+	box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+
+.userName,
+.catchCount {
+	text-align: center;
+	font-size: 16px;
+	color: #3d3d3d;
+}
+.message {
+	display: flex;
+}
+
+.catchTitle {
+	font-family: "Orbitron", sans-serif;
+	font-weight: 900;
+}
+@media only screen and (max-width: 700px) {
+	.userCards {
+		padding: 0px;
+	}
+	.row .card {
+		border-radius: 0px;
+	}
+	.userWrapper {
+		padding: 0px;
+	}
+	.userCard {
+		padding: 15px 5px;
+	}
+	.userCards img {
+		width: 40px;
+	}
+	.catchCount {
+		display: none;
+	}
 }

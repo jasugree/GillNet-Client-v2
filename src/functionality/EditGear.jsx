@@ -18,23 +18,16 @@ import {
 } from "reactstrap";
 import "../nav/nav.css";
 
-class GearCreate extends Component {
+class EditGear extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			modal: false,
-			gearType: "",
-			title: "",
-			brand: "",
-			price: 0,
-			userRating: 0,
-		};
+		this.state = { ...this.props.gear, modal: false };
 	}
 
-	handleGearCreate = (e) => {
+	handleUpdateGear = (e) => {
 		e.preventDefault();
-		fetch("http://localhost:3000/gear/create", {
-			method: "POST",
+		fetch(`http://localhost:3000/gear/update/${this.state.id}`, {
+			method: "PUT",
 			body: JSON.stringify(this.state),
 			headers: new Headers({
 				"Content-Type": "application/json",
@@ -45,8 +38,12 @@ class GearCreate extends Component {
 			.then((data) => {
 				console.log(data);
 				this.toggle();
-				// this.props.updateFishes(data);
-				window.location.reload();
+				this.props.updateGears(data, true);
+			})
+			.catch((error) => {
+				console.log("Error", error);
+				alert("Something went wrong. Please try again.");
+				return;
 			});
 	};
 
@@ -54,19 +51,18 @@ class GearCreate extends Component {
 		this.setState({
 			modal: !this.state.modal,
 		});
+		console.log("clicked");
 	};
 
 	render() {
 		return (
 			<div>
-				<li className="navItem" onClick={this.toggle}>
-					<i className="fas fa-toolbox"></i>
-					<br />
-					<span>Add Tackle Gear</span>
-				</li>
+				<span className="editButton" onClick={this.toggle}>
+					<i class="fas fa-pen"></i>
+				</span>
 				<Modal isOpen={this.state.modal} toggle={this.toggle}>
-					<Form onSubmit={this.handleGearCreate}>
-						<ModalHeader toggle={this.toggle}>Add Your Gear</ModalHeader>
+					<Form onSubmit={this.handleUpdateGear}>
+						<ModalHeader toggle={this.toggle}>Update Your Gear</ModalHeader>
 						<ModalBody className="create-modal">
 							<FormGroup>
 								<Label htmlFor="description">Gear Type</Label>
@@ -151,7 +147,7 @@ class GearCreate extends Component {
 						</ModalBody>
 						<ModalFooter>
 							<Button id="create-button" type="submit">
-								Post
+								Update Catch
 							</Button>
 						</ModalFooter>
 					</Form>
@@ -161,4 +157,4 @@ class GearCreate extends Component {
 	}
 }
 
-export default GearCreate;
+export default EditGear;

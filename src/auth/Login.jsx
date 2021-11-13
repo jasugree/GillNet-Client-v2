@@ -52,7 +52,7 @@ class Login extends Component {
 			})
 			.catch((error) => {
 				console.log("Error", error);
-				alert("Something went wrong. Please try again.");
+				alert("Something went wrong. Please try again. LOGIN");
 				return;
 			});
 	};

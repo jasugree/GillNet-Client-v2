@@ -15,12 +15,19 @@ import "./profile.css";
 import EditFish from "../functionality/EditFish";
 import DeleteFish from "../functionality/DeleteFish";
 import LikeFish from "../functionality/LikeFish";
+import DeleteGear from "../functionality/DeleteGear";
+import EditGear from "../functionality/EditGear";
 
 class Profile extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {};
 	}
+
+	componentDidMount() {
+		this.props.fetchMyGear();
+	}
+
 	render() {
 		const profileImage = localStorage.getItem("profileImage");
 		const firstName = localStorage.getItem("firstName");
@@ -187,6 +194,72 @@ class Profile extends Component {
 					<Col>
 						<div className="myFish">
 							<h2>{this.props.user?.firstName}'s Gear</h2>
+							<Row lg={1} className="g-4 myFishCards">
+								{this.props.gears
+									?.sort((a, b) => {
+										return (
+											new Date(b.createdAt).getTime() -
+											new Date(a.createdAt).getTime()
+										);
+									})
+									.map((gear, index) => {
+										const createdAt = new Date(gear.createdAt);
+										const createdDate = createdAt.toLocaleDateString("en-US");
+										const createdTime = createdAt.toLocaleTimeString([], {
+											timeStyle: "short",
+										});
+
+										return (
+											<Col key={index}>
+												<Card>
+													<CardBody className="gearCard">
+														<div className="gearWrapper">
+															<div className="gearHeader">
+																<div className="header">
+																	<span className="gearStart">
+																		{gear?.gearType}:
+																	</span>{" "}
+																	{gear?.title}
+																</div>
+																<div className="interactiveGear">
+																	{" "}
+																	<div className="editButtonGear">
+																		<EditGear
+																			user={this.props.user}
+																			gear={gear}
+																			updateFishes={this.props.updateFishes}
+																			sessionToken={this.props.sessionToken}
+																			updateGears={this.props.updateGears}
+																		/>
+																	</div>
+																	<div className="deleteButtonGear">
+																		<DeleteGear
+																			user={this.props.user}
+																			gear={gear}
+																			updateFishes={this.props.updateFishes}
+																			sessionToken={this.props.sessionToken}
+																			updateGears={this.props.updateGears}
+																		/>
+																	</div>
+																</div>
+															</div>
+															<div className="gearDetails">
+																<div>{gear?.brand}</div>
+																<div>${gear?.price}.00</div>
+															</div>
+															<div className="gearReviewInteract">
+																<div className="review">
+																	<i class="fas fa-star"></i>
+																	{gear?.userRating}/5
+																</div>
+															</div>
+														</div>
+													</CardBody>
+												</Card>
+											</Col>
+										);
+									})}
+							</Row>
 						</div>
 					</Col>
 				</Row>

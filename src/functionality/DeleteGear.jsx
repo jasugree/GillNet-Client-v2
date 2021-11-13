@@ -18,15 +18,15 @@ import {
 } from "reactstrap";
 import "../nav/nav.css";
 
-class DeleteFish extends Component {
+class DeleteGear extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { ...this.props.fish, modal: false };
+		this.state = { ...this.props.gear, modal: false };
 	}
 
-	handleDeleteFish = (e) => {
+	handleDeleteGear = (e) => {
 		e.preventDefault();
-		fetch(`http://localhost:3000/fish/delete/${this.state.id}`, {
+		fetch(`http://localhost:3000/gear/delete/${this.state.id}`, {
 			method: "DELETE",
 			body: JSON.stringify(this.state),
 			headers: new Headers({
@@ -38,6 +38,7 @@ class DeleteFish extends Component {
 			.then((data) => {
 				console.log(data);
 				this.toggle();
+				// this.props.updateFishes(data, true);
 				this.props.updateGears(data, true);
 			})
 			.catch((error) => {
@@ -58,29 +59,16 @@ class DeleteFish extends Component {
 		const userName = localStorage.getItem("userName");
 		return (
 			<div>
-				<span
-					className="editButton"
-					onClick={this.toggle}
-					style={
-						this.props.profile
-							? {}
-							: {
-									display:
-										this.props.fish?.user?.userName == this.props.user?.userName
-											? "auto"
-											: "none",
-							  }
-					}
-				>
+				<span className="editButton" onClick={this.toggle}>
 					<i className="fas fa-backspace"></i>
 				</span>
 				<Modal isOpen={this.state.modal} toggle={this.toggle}>
-					<ModalHeader toggle={this.toggle}>Delete Fish</ModalHeader>
+					<ModalHeader toggle={this.toggle}>Delete Gear</ModalHeader>
 					<ModalBody className="create-modal">
 						<p style={{ color: "red" }}>
-							Are you sure you want to delete this post?
+							Are you sure you want to delete this Gear?
 						</p>
-						<Button id="create-button" onClick={this.handleDeleteFish}>
+						<Button id="create-button" onClick={this.handleDeleteGear}>
 							Delete Catch
 						</Button>
 					</ModalBody>
@@ -90,4 +78,4 @@ class DeleteFish extends Component {
 	}
 }
 
-export default DeleteFish;
+export default DeleteGear;

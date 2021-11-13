@@ -14,7 +14,7 @@ class App extends Component {
 
 	authorize = (token) => {
 		if (!token) {
-			console.log("Jake fixed");
+			return;
 		} else {
 			fetch("http://localhost:3000/user/authorize", {
 				method: "GET",
@@ -30,7 +30,7 @@ class App extends Component {
 				})
 				.catch((error) => {
 					console.log("Error", error);
-					alert("Something went wrong. Please try again.");
+					alert("Something went wrong. Please try again. AUTHORIZE");
 					return;
 				});
 		}

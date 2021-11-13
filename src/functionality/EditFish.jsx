@@ -125,6 +125,7 @@ class EditFish extends Component {
 													catchAndRelease: !this.state.catchAndRelease,
 												})
 											}
+											defaultChecked={this.state.catchAndRelease}
 											value={this.state.catchAndRelease}
 											name="description"
 										/>

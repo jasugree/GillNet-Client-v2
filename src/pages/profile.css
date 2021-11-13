@@ -80,6 +80,9 @@ h2 {
 	margin-left: 225px;
 }
 .join {
+	font-family: "Assistant", sans-serif;
+	font-weight: normal;
+	color: white;
 	background: #57cc99;
 	padding: 10px 25px;
 	border-top-left-radius: 10px;
@@ -131,6 +134,99 @@ hr.detailBreak {
 
 .userFishGear {
 	align-items: flex-start;
+}
+
+.gearDetails,
+.gearReviewInteract {
+	display: flex;
+}
+.gearDetails {
+	align-items: center;
+	justify-content: center;
+	border-bottom: solid rgba(0, 0, 0, 0.25) 1px;
+}
+.gearDetails div {
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+}
+.gearDetails div:first-child {
+	border-right: solid rgba(0, 0, 0, 0.25) 1px;
+}
+.gearReviewInteract {
+	align-items: center;
+	justify-content: center;
+}
+.gearReviewInteract div {
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	text-align: center;
+}
+.review {
+	padding: 10px 0px;
+}
+
+.addDeleteGear {
+	display: flex;
+}
+.gearHeader {
+	background: #57cc99;
+	padding: 10px 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	color: white;
+	font-family: "Assistant", sans-serif;
+	font-weight: normal;
+}
+.gearStart {
+	font-family: "Orbitron", sans-serif;
+	font-weight: 900;
+}
+.gearCard {
+	padding: 0px;
+	font-family: "Assistant", sans-serif;
+}
+.gearHeader,
+.interactiveGear {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.interactiveGear {
+	margin-left: auto;
+}
+.deleteButtonGear div,
+.editButtonGear div {
+	border-radius: 100px;
+	width: 35px;
+	height: 35px;
+	box-shadow: rgba(131, 121, 121, 0.18) 0px 2px 4px;
+	background: #f3f3f3;
+}
+.editButtonGear div {
+	margin-right: 10px;
+}
+.interactiveGear:hover {
+	cursor: pointer;
+}
+
+.interactiveGear .fas,
+.interactiveGear .far {
+	margin: 0px;
+	align-items: center;
+	text-align: center;
+	position: relative;
+	top: calc(50% - 12px);
+	left: calc(50% - 11px);
+}
+
+.review {
+	color: #38a3a5;
+	font-family: "Orbitron", sans-serif;
+	font-weight: 900;
 }
 
 @media only screen and (max-width: 700px) {

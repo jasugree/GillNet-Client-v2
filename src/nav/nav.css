@@ -152,6 +152,7 @@
 	background-color: #38a3a5;
 	width: 100% !important;
 	margin-left: 240px !important;
+	min-height: calc(100vh - 91px);
 }
 
 .editProfile {

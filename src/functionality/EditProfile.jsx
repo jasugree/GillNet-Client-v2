@@ -18,14 +18,12 @@ import {
 } from "reactstrap";
 import "../nav/nav.css";
 import ProfilePic from "./ProfilePic";
+import "./EditProfile.css";
 
 class EditProfile extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			modal: false,
-			// firstName: this.props.user?.firstName,
-		};
+		this.state = { ...this.props.user, modal: false };
 	}
 
 	handleUpdateProfile = (e) => {
@@ -45,6 +43,15 @@ class EditProfile extends Component {
 				// window.location.reload();
 			});
 	};
+
+	componentDidUpdate(prevProps, prevState) {
+		if (prevProps !== this.props) {
+			this.setState({
+				...this.state,
+				...this.props.user,
+			});
+		}
+	}
 
 	toggle = () => {
 		this.setState({
@@ -75,62 +82,65 @@ class EditProfile extends Component {
 					<Form onSubmit={this.handleUpdateProfile}>
 						<ModalHeader toggle={this.toggle}>Update Your Profile</ModalHeader>
 						<ModalBody className="create-modal">
-							<FormGroup>
-								<ProfilePic
-									image={this.state.profileImage}
-									setImage={this.setImage}
-								/>
-							</FormGroup>
-							<FormGroup>
-								<Label htmlFor="description">First Name</Label>
-								<Input
-									type="textarea"
-									rows="1"
-									name="description"
-									onChange={(e) =>
-										this.setState({
-											firstName: e.target.value,
-										})
-									}
-									value={this.state.firstName}
-									required
-								/>
-							</FormGroup>
-							<FormGroup>
-								<Label htmlFor="description">Last Name</Label>
-								<Input
-									type="textarea"
-									rows="1"
-									name="description"
-									onChange={(e) =>
-										this.setState({
-											lastName: e.target.value,
-										})
-									}
-									value={this.state.lastName}
-									required
-								/>
-							</FormGroup>
-							<FormGroup>
-								<Label htmlFor="description">Email</Label>
-								<Input
-									type="textarea"
-									rows="1"
-									name="description"
-									onChange={(e) =>
-										this.setState({
-											email: e.target.value,
-										})
-									}
-									value={this.state.email}
-									required
-								/>
-							</FormGroup>
+							<Row className="firstRow">
+								<Col>
+									<FormGroup>
+										<ProfilePic
+											image={this.state.profileImage}
+											setImage={this.setImage}
+										/>
+									</FormGroup>
+								</Col>
+								<Col className="nexToPic">
+									<FormGroup>
+										<Label htmlFor="description">First Name</Label>
+										<Input
+											type="textarea"
+											rows="1"
+											name="description"
+											onChange={(e) =>
+												this.setState({
+													firstName: e.target.value,
+												})
+											}
+											value={this.state.firstName}
+										/>
+									</FormGroup>
+									<FormGroup>
+										<Label htmlFor="description">Last Name</Label>
+										<Input
+											type="textarea"
+											rows="1"
+											name="description"
+											onChange={(e) =>
+												this.setState({
+													lastName: e.target.value,
+												})
+											}
+											value={this.state.lastName}
+										/>
+									</FormGroup>
+									<FormGroup>
+										<Label htmlFor="description">Email</Label>
+										<Input
+											type="textarea"
+											rows="1"
+											name="description"
+											onChange={(e) =>
+												this.setState({
+													email: e.target.value,
+												})
+											}
+											value={this.state.email}
+										/>
+									</FormGroup>
+								</Col>
+							</Row>
 							<FormGroup>
 								<Label htmlFor="description">Description</Label>
 								<Input
 									type="textarea"
-									rows="1"
+									rows="5"
 									name="description"
 									onChange={(e) =>
 										this.setState({
@@ -138,73 +148,143 @@ class EditProfile extends Component {
 										})
 									}
 									value={this.state.description}
-									required
 								/>
 							</FormGroup>
-							<FormGroup>
-								<Label htmlFor="description">Age</Label>
-								<Input
-									type="textarea"
-									rows="1"
-									name="description"
-									onChange={(e) =>
-										this.setState({
-											age: e.target.value,
-										})
-									}
-									value={this.state.age}
-									required
-								/>
-							</FormGroup>
-							<FormGroup>
-								<Label htmlFor="description">City</Label>
-								<Input
-									type="textarea"
-									rows="1"
-									name="description"
-									onChange={(e) =>
-										this.setState({
-											city: e.target.value,
-										})
-									}
-									value={this.state.city}
-									required
-								/>
-							</FormGroup>
-							<FormGroup>
-								<Label htmlFor="description">State</Label>
-								<Input
-									type="textarea"
-									rows="1"
-									name="description"
-									onChange={(e) =>
-										this.setState({
-											state: e.target.value,
-										})
-									}
-									value={this.state.state}
-									required
-								/>
-							</FormGroup>
-							<FormGroup>
-								<Label htmlFor="description">Admin</Label>
-								<br />
-								<Input
-									type="checkbox"
-									rows="1"
-									onChange={() =>
-										this.setState({
-											admin: !this.state.admin,
-										})
-									}
-									value={this.state.admin}
-									name="description"
-								/>
-							</FormGroup>
+							<Row>
+								<Col>
+									<FormGroup>
+										<Label htmlFor="description">Age</Label>
+										<Input
+											type="textarea"
+											rows="1"
+											name="description"
+											onChange={(e) =>
+												this.setState({
+													age: e.target.value,
+												})
+											}
+											value={this.state.age}
+										/>
+									</FormGroup>
+								</Col>
+								<Col>
+									<FormGroup>
+										<Label htmlFor="description">City</Label>
+										<Input
+											type="textarea"
+											rows="1"
+											name="description"
+											onChange={(e) =>
+												this.setState({
+													city: e.target.value,
+												})
+											}
+											value={this.state.city}
+										/>
+									</FormGroup>
+								</Col>
+								<Col>
+									<FormGroup>
+										<Label htmlFor="description">State</Label>
+										<Input
+											type="select"
+											rows="1"
+											id="state"
+											name="state"
+											onChange={(e) =>
+												this.setState({
+													state: e.target.value,
+												})
+											}
+											value={this.state.state}
+										>
+											<option value="" selected disabled hidden>
+												Please select a State
+											</option>
+											<option value="AL">Alabama</option>
+											<option value="AK">Alaska</option>
+											<option value="AZ">Arizona</option>
+											<option value="AR">Arkansas</option>
+											<option value="CA">California</option>
+											<option value="CO">Colorado</option>
+											<option value="CT">Connecticut</option>
+											<option value="DE">Delaware</option>
+											<option value="DC">District Of Columbia</option>
+											<option value="FL">Florida</option>
+											<option value="GA">Georgia</option>
+											<option value="HI">Hawaii</option>
+											<option value="ID">Idaho</option>
+											<option value="IL">Illinois</option>
+											<option value="IN">Indiana</option>
+											<option value="IA">Iowa</option>
+											<option value="KS">Kansas</option>
+											<option value="KY">Kentucky</option>
+											<option value="LA">Louisiana</option>
+											<option value="ME">Maine</option>
+											<option value="MD">Maryland</option>
+											<option value="MA">Massachusetts</option>
+											<option value="MI">Michigan</option>
+											<option value="MN">Minnesota</option>
+											<option value="MS">Mississippi</option>
+											<option value="MO">Missouri</option>
+											<option value="MT">Montana</option>
+											<option value="NE">Nebraska</option>
+											<option value="NV">Nevada</option>
+											<option value="NH">New Hampshire</option>
+											<option value="NJ">New Jersey</option>
+											<option value="NM">New Mexico</option>
+											<option value="NY">New York</option>
+											<option value="NC">North Carolina</option>
+											<option value="ND">North Dakota</option>
+											<option value="OH">Ohio</option>
+											<option value="OK">Oklahoma</option>
+											<option value="OR">Oregon</option>
+											<option value="PA">Pennsylvania</option>
+											<option value="RI">Rhode Island</option>
+											<option value="SC">South Carolina</option>
+											<option value="SD">South Dakota</option>
+											<option value="TN">Tennessee</option>
+											<option value="TX">Texas</option>
+											<option value="UT">Utah</option>
+											<option value="VT">Vermont</option>
+											<option value="VA">Virginia</option>
+											<option value="WA">Washington</option>
+											<option value="WV">West Virginia</option>
+											<option value="WI">Wisconsin</option>
+											<option value="WY">Wyoming</option>
+										</Input>
+									</FormGroup>
+								</Col>
+								<Col>
+									<FormGroup>
+										<Label htmlFor="description" className="admin">
+											Admin
+										</Label>
+										<Input
+											className="admin"
+											type="checkbox"
+											rows="1"
+											name="admin"
+											// onChange={(e) =>
+											// 	this.setState({
+											// 		admin: e.target.value,
+											// 	})
+											// }
+											onChange={() =>
+												this.setState({
+													admin: !this.state.admin,
+												})
+											}
+											defaultChecked={this.state.admin}
+											value={this.state.admin}
+										/>
+									</FormGroup>
+								</Col>
+							</Row>
 						</ModalBody>
 						<ModalFooter>
-							<Button id="create-button" type="submit">
-								Post
+							<Button className="editProfile-button" type="submit">
+								Log Your New Catch!
 							</Button>
 						</ModalFooter>
 					</Form>
