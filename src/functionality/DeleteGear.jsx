@@ -16,6 +16,7 @@ import {
 	InputGroupText,
 	InputGroup,
 } from "reactstrap";
+import APIURL from "../helpers/environments";
 import "../nav/nav.css";
 
 class DeleteGear extends Component {
@@ -26,7 +27,7 @@ class DeleteGear extends Component {
 
 	handleDeleteGear = (e) => {
 		e.preventDefault();
-		fetch(`http://localhost:3000/gear/delete/${this.state.id}`, {
+		fetch(`${APIURL}/gear/delete/${this.state.id}`, {
 			method: "DELETE",
 			body: JSON.stringify(this.state),
 			headers: new Headers({

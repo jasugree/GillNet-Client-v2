@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import APIURL from "../helpers/environments";
 class LikeFish extends Component {
 	constructor(props) {
 		super(props);
@@ -6,7 +7,7 @@ class LikeFish extends Component {
 	}
 
 	toggleLike = () => {
-		fetch(`http://localhost:3000/fish/like/${this.props.fish.id}`, {
+		fetch(`${APIURL}/fish/like/${this.props.fish.id}`, {
 			method: "POST",
 			headers: new Headers({
 				"Content-Type": "application/json",

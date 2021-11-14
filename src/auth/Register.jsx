@@ -12,6 +12,7 @@ import {
 } from "reactstrap";
 import "./auth.css";
 import BrandLogo from "../assets/GillNet-light.svg";
+import APIURL from "../helpers/environments";
 
 class Register extends Component {
 	constructor(props) {
@@ -21,7 +22,7 @@ class Register extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		fetch("http://localhost:3000/user/create", {
+		fetch(`${APIURL}/user/create`, {
 			method: "POST",
 			body: JSON.stringify({
 				userName: this.state.username,

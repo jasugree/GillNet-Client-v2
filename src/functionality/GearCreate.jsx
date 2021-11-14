@@ -16,6 +16,7 @@ import {
 	InputGroupText,
 	InputGroup,
 } from "reactstrap";
+import APIURL from "../helpers/environments";
 import "../nav/nav.css";
 
 class GearCreate extends Component {
@@ -33,7 +34,7 @@ class GearCreate extends Component {
 
 	handleGearCreate = (e) => {
 		e.preventDefault();
-		fetch("http://localhost:3000/gear/create", {
+		fetch(`${APIURL}/gear/create`, {
 			method: "POST",
 			body: JSON.stringify(this.state),
 			headers: new Headers({

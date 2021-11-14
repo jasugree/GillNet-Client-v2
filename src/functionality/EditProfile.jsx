@@ -19,6 +19,7 @@ import {
 import "../nav/nav.css";
 import ProfilePic from "./ProfilePic";
 import "./EditProfile.css";
+import APIURL from "../helpers/environments";
 
 class EditProfile extends Component {
 	constructor(props) {
@@ -27,7 +28,7 @@ class EditProfile extends Component {
 	}
 
 	handleUpdateProfile = (e) => {
-		fetch("http://localhost:3000/user/updateprofile", {
+		fetch(`${APIURL}/user/updateprofile`, {
 			method: "PUT",
 			body: JSON.stringify(this.state),
 			headers: new Headers({

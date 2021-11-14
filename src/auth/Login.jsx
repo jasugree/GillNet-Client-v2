@@ -12,6 +12,7 @@ import {
 } from "reactstrap";
 import "./auth.css";
 import BrandLogo from "../assets/GillNet-light.svg";
+import APIURL from "../helpers/environments";
 
 class Login extends Component {
 	constructor(props) {
@@ -21,7 +22,7 @@ class Login extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		fetch("http://localhost:3000/user/login", {
+		fetch(`${APIURL}/user/login`, {
 			method: "POST",
 			body: JSON.stringify({
 				userName: this.state.username,

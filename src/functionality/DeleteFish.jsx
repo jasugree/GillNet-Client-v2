@@ -16,6 +16,7 @@ import {
 	InputGroupText,
 	InputGroup,
 } from "reactstrap";
+import APIURL from "../helpers/environments";
 import "../nav/nav.css";
 
 class DeleteFish extends Component {
@@ -26,7 +27,7 @@ class DeleteFish extends Component {
 
 	handleDeleteFish = (e) => {
 		e.preventDefault();
-		fetch(`http://localhost:3000/fish/delete/${this.state.id}`, {
+		fetch(`${APIURL}/fish/delete/${this.state.id}`, {
 			method: "DELETE",
 			body: JSON.stringify(this.state),
 			headers: new Headers({

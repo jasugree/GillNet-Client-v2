@@ -16,6 +16,7 @@ import {
 	InputGroupText,
 	InputGroup,
 } from "reactstrap";
+import APIURL from "../helpers/environments";
 import "../nav/nav.css";
 
 class EditGear extends Component {
@@ -26,7 +27,7 @@ class EditGear extends Component {
 
 	handleUpdateGear = (e) => {
 		e.preventDefault();
-		fetch(`http://localhost:3000/gear/update/${this.state.id}`, {
+		fetch(`${APIURL}/gear/update/${this.state.id}`, {
 			method: "PUT",
 			body: JSON.stringify(this.state),
 			headers: new Headers({

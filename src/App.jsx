@@ -5,6 +5,7 @@ import Auth from "./auth/Auth.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./nav/Nav";
+import APIURL from "./helpers/environments";
 
 class App extends Component {
 	constructor(props) {
@@ -16,7 +17,7 @@ class App extends Component {
 		if (!token) {
 			return;
 		} else {
-			fetch("http://localhost:3000/user/authorize", {
+			fetch(`${APIURL}/user/authorize`, {
 				method: "GET",
 				headers: new Headers({
 					"Content-Type": "application/json",

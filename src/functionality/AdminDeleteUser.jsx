@@ -16,6 +16,7 @@ import {
 	InputGroupText,
 	InputGroup,
 } from "reactstrap";
+import APIURL from "../helpers/environments";
 import "../nav/nav.css";
 
 class AdminDeleteUser extends Component {
@@ -26,7 +27,7 @@ class AdminDeleteUser extends Component {
 
 	handleDeleteUser = (e) => {
 		e.preventDefault();
-		fetch(`http://localhost:3000/user/admindelete/${this.state.id}`, {
+		fetch(`${APIURL}/user/admindelete/${this.state.id}`, {
 			method: "DELETE",
 			body: JSON.stringify(this.state),
 			headers: new Headers({

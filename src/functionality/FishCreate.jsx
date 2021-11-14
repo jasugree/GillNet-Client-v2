@@ -16,6 +16,7 @@ import {
 	InputGroupText,
 	InputGroup,
 } from "reactstrap";
+import APIURL from "../helpers/environments";
 import "../nav/nav.css";
 import FishPic from "./FishPic";
 
@@ -35,7 +36,7 @@ class FishCreate extends Component {
 
 	handleFishCatch = (e) => {
 		e.preventDefault();
-		fetch("http://localhost:3000/fish/create", {
+		fetch(`${APIURL}/fish/create`, {
 			method: "POST",
 			body: JSON.stringify(this.state),
 			headers: new Headers({

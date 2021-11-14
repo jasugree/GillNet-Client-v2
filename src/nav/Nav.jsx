@@ -10,6 +10,7 @@ import FishCreate from "../functionality/FishCreate";
 import GearCreate from "../functionality/GearCreate";
 import "./nav.css";
 import EditProfile from "../functionality/EditProfile";
+import APIURL from "../helpers/environments";
 
 class Nav extends Component {
 	constructor(props) {
@@ -25,7 +26,7 @@ class Nav extends Component {
 
 	//GET ALL USERS
 	fetchUsers = () => {
-		fetch("http://localhost:3000/user/", {
+		fetch(`${APIURL}/user/`, {
 			method: "GET",
 			headers: new Headers({
 				"Content-Type": "application/json",
@@ -46,7 +47,7 @@ class Nav extends Component {
 
 	//GET GEAR OF USER
 	fetchMyGear = () => {
-		fetch("http://localhost:3000/gear/mine/", {
+		fetch(`${APIURL}/gear/mine/`, {
 			method: "GET",
 			headers: new Headers({
 				"Content-Type": "application/json",
@@ -69,7 +70,7 @@ class Nav extends Component {
 	//GET ALL FISH
 	fetchPost = () => {
 		// let token = localStorage.getItem("token")
-		fetch("http://localhost:3000/fish/", {
+		fetch(`${APIURL}/fish/`, {
 			method: "GET",
 			headers: new Headers({
 				"Content-Type": "application/json",
