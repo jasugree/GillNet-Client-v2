@@ -71,10 +71,10 @@ class GearCreate extends Component {
 							<FormGroup>
 								<Label htmlFor="description">Gear Type</Label>
 								<Input
-									type="textarea"
+									type="select"
 									rows="1"
-									placeholder="Add a description to your post..."
-									name="description"
+									placeholder="Please Select a Gear"
+									name="gear type"
 									onChange={(e) =>
 										this.setState({
 											gearType: e.target.value,
@@ -82,14 +82,23 @@ class GearCreate extends Component {
 									}
 									value={this.state.gearType}
 									required
-								/>
+								>
+									<option value="" selected disabled hidden>
+										Please select a State
+									</option>
+									<option value="Lure">Lure</option>
+									<option value="Rod">Rod</option>
+									<option value="Line">Line</option>
+									<option value="Reel">Reel</option>
+									<option value="Other Equipment">Other Equipment</option>
+								</Input>
 							</FormGroup>
 							<FormGroup>
 								<Label htmlFor="description">Title</Label>
 								<Input
 									type="textarea"
 									rows="1"
-									placeholder="Brown Trout, Catfish..."
+									placeholder="Specific Model or Make"
 									name="description"
 									onChange={(e) =>
 										this.setState({
@@ -105,7 +114,7 @@ class GearCreate extends Component {
 								<Input
 									type="textarea"
 									rows="1"
-									placeholder="Brown Trout, Catfish..."
+									placeholder="Rapala, Shimano, etc."
 									name="description"
 									onChange={(e) =>
 										this.setState({
@@ -121,7 +130,7 @@ class GearCreate extends Component {
 								<Input
 									type="textarea"
 									rows="1"
-									placeholder="Brown Trout, Catfish..."
+									placeholder="0"
 									name="description"
 									onChange={(e) =>
 										this.setState({
@@ -137,7 +146,7 @@ class GearCreate extends Component {
 								<Input
 									type="textarea"
 									rows="1"
-									placeholder="Brown Trout, Catfish..."
+									placeholder="0"
 									name="description"
 									onChange={(e) =>
 										this.setState({

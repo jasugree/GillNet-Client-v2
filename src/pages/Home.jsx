@@ -22,6 +22,10 @@ class Home extends Component {
 		this.state = {};
 	}
 
+	componentDidMount() {
+		this.props.fetchPost();
+		// this.fetchUsers();
+	}
 	render() {
 		return (
 			<div>

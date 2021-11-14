@@ -132,10 +132,10 @@ class Nav extends Component {
 		}
 	};
 
-	componentDidMount() {
-		this.fetchPost();
-		// this.fetchUsers();
-	}
+	// componentDidMount() {
+	// 	this.fetchPost();
+	// 	// this.fetchUsers();
+	// }
 	//   componentDidUpdate(prevprops, prevstate){
 	//     if(prevprops.sessionToken !== this.props.sessionToken){
 	//         this.fetchPost();
@@ -269,6 +269,7 @@ class Nav extends Component {
 							sessionToken={this.props.sessionToken}
 							updateFishes={this.updateFishes}
 							user={this.props.user}
+							fetchPost={this.fetchPost}
 						/>
 					</Route>
 					<Route exact path="/nearby">
