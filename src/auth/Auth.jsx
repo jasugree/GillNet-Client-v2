@@ -37,8 +37,7 @@ class Auth extends Component {
 						className="authWrapper"
 						style={{
 							height: "100vh",
-							backgroundImage:
-								"url(https://images.unsplash.com/photo-1462927346281-d1727e290082?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyNzMyMjJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MzYwNDQ3MTg&ixlib=rb-1.2.1&q=85)" /*`url(${this.state.loginImage})`*/,
+							backgroundImage: /*"url(https://images.unsplash.com/photo-1462927346281-d1727e290082?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyNzMyMjJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MzYwNDQ3MTg&ixlib=rb-1.2.1&q=85)"*/ `url(${this.state.loginImage})`,
 							backgroundSize: "cover",
 							backgroundPosition: "center",
 						}}
