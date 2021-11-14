@@ -40,6 +40,8 @@ const ProfilePic = (props) => {
 						id="profile-image-upload"
 						type="file"
 						name="file"
+						method="post"
+						enctype="multipart/form-data"
 						placeholder="Upload Image Here"
 						onChange={UploadImage}
 					/>{" "}
