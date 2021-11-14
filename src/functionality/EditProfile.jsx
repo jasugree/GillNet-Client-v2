@@ -82,7 +82,7 @@ class EditProfile extends Component {
 				>
 					<Form
 						onSubmit={this.handleUpdateProfile}
-						method="PUT"
+						method="POST"
 						enctype="multipart/form-data"
 					>
 						<ModalHeader toggle={this.toggle}>Update Your Profile</ModalHeader>
