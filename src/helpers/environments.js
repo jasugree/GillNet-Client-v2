@@ -6,10 +6,7 @@ switch (window.location.hostname) {
 		APIURL = "http://localhost:3001";
 		break;
 	case "gillnet-app.herokuapp.com":
-		APIURL = "https://gillnet-app.herokuapp.com/";
-		break;
-	default:
-		APIURL = "https://gillnet-app.herokuapp.com/";
+		APIURL = "https://gillnet.herokuapp.com/";
 }
-
+// Hello?
 export default APIURL;
