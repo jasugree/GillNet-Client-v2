@@ -80,7 +80,11 @@ class EditProfile extends Component {
 					isOpen={this.state.modal}
 					toggle={this.toggle}
 				>
-					<Form onSubmit={this.handleUpdateProfile}>
+					<Form
+						onSubmit={this.handleUpdateProfile}
+						method="PUT"
+						enctype="multipart/form-data"
+					>
 						<ModalHeader toggle={this.toggle}>Update Your Profile</ModalHeader>
 						<ModalBody className="create-modal">
 							<Row className="firstRow">
