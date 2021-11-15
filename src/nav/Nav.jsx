@@ -301,6 +301,7 @@ class Nav extends Component {
 							fetchMyGear={this.fetchMyGear}
 							gears={this.state.gears}
 							updateUsers={this.updateUsers}
+							fetchPost={this.fetchPost}
 						/>
 					</Route>
 				</div>
