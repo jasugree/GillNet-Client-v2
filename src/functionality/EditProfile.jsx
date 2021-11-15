@@ -28,6 +28,7 @@ class EditProfile extends Component {
 	}
 
 	handleUpdateProfile = (e) => {
+		e.preventDefault();
 		fetch(`${APIURL}/user/updateprofile`, {
 			method: "PUT",
 			body: JSON.stringify(this.state),
@@ -80,7 +81,11 @@ class EditProfile extends Component {
 					isOpen={this.state.modal}
 					toggle={this.toggle}
 				>
-					<Form onSubmit={this.handleUpdateProfile}>
+					<Form
+						onSubmit={this.handleUpdateProfile}
+						method="post"
+						enctype="multipart/form-data"
+					>
 						<ModalHeader toggle={this.toggle}>Update Your Profile</ModalHeader>
 						<ModalBody className="create-modal">
 							<Row className="firstRow">
@@ -89,6 +94,7 @@ class EditProfile extends Component {
 										<ProfilePic
 											image={this.state.profileImage}
 											setImage={this.setImage}
+											handleUpdateProfile={this.handleUpdateProfile}
 										/>
 									</FormGroup>
 								</Col>

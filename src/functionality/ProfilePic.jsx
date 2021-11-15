@@ -24,6 +24,7 @@ const ProfilePic = (props) => {
 
 		setImage(File.secure_url);
 		setLoading(false);
+		// this.props.handleUpdateProfile();
 	};
 
 	return (
@@ -40,8 +41,6 @@ const ProfilePic = (props) => {
 						id="profile-image-upload"
 						type="file"
 						name="file"
-						method="post"
-						enctype="multipart/form-data"
 						placeholder="Upload Image Here"
 						onChange={UploadImage}
 					/>{" "}
