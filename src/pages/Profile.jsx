@@ -26,6 +26,7 @@ class Profile extends Component {
 
 	componentDidMount() {
 		this.props.fetchMyGear();
+		this.props.fetchPost();
 	}
 
 	render() {
