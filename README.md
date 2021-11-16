@@ -1,5 +1,7 @@
 # Welcome to GillNet!
 
+![screenshot](./assets/gillnet-readme.png)
+
 This is the Client Repository for GillNet. This application is intended to server as a social media and logging platform for all levels of fishermen and women. Within this app, you can create a profile, log fish you have caught, and also record any of your fishing equipment. You can also update and delete all posts in case mistakes were made or you don't want a piece of info to be shown on the app or your profile.
 
 # Getting Started with Create React App
