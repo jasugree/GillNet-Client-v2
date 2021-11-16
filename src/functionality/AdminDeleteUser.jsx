@@ -61,11 +61,13 @@ class AdminDeleteUser extends Component {
 				</Button>
 				<Modal isOpen={this.state.modal} toggle={this.toggle}>
 					<ModalHeader toggle={this.toggle}>Delete User</ModalHeader>
-					<ModalBody className="create-modal">
-						<p style={{ color: "red" }}>
-							Are you sure you want to delete this user?
-						</p>
-						<Button id="create-button" onClick={this.handleDeleteUser}>
+					<ModalBody className="delete-modal">
+						<p>Are you sure you want to delete this user?</p>
+						<Button
+							id="create-button"
+							className="editProfile-button"
+							onClick={this.handleDeleteUser}
+						>
 							Delete Catch
 						</Button>
 					</ModalBody>
