@@ -12,14 +12,11 @@
 .userCards .card-body {
 	display: flex;
 	align-items: center;
-	justify-content: center;
-}
-.userCards .card-body div {
 	justify-content: space-evenly;
-	width: 25%;
 }
+
 .userCards .card-body div:last-child {
-	text-align: right;
+	text-align: center;
 }
 
 .userCards img {
@@ -29,9 +26,6 @@
 	border-radius: 400px;
 	border: solid #57cc99 4px;
 	background: #57cc99;
-}
-.userCard div {
-	flex-basis: auto;
 }
 
 .userCard {
@@ -70,7 +64,9 @@
 	font-family: "Assistant", sans-serif;
 	font-weight: bold;
 	font-size: 20px;
-	margin-left: 40px;
+}
+.message {
+	margin-right: 20px;
 }
 @media only screen and (max-width: 700px) {
 	.userCards {
@@ -93,10 +89,10 @@
 		padding: 0px;
 	}
 	.userCards .card-body {
-		display: block;
+		justify-content: space-evenly;
 	}
-	.userCards .card-body div {
-		display: inline;
+	.userCards .card-body {
+		display: flex;
 	}
 	.catchCount {
 		display: none !important;
@@ -104,14 +100,14 @@
 	.userCards img {
 		width: 50px !important;
 		height: 50px;
-		margin-right: 20px;
+		margin-right: 10px;
 	}
 	.userName {
 		font-size: 16px !important;
 		text-align: left;
 		margin-right: 10px;
 	}
-	.delete {
-		margin-left: 10px;
+	.message {
+		margin-right: 20px;
 	}
 }

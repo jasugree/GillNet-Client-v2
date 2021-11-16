@@ -71,7 +71,7 @@ class Others extends Component {
 												{user?.fishes.length}
 											</div>
 											<div className="message">
-												<div>
+												<div className="message">
 													<a href={"mailto:" + user?.email}>
 														<Button className="editProfile-button">
 															Message
