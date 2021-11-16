@@ -232,7 +232,27 @@
 .mobileLogOut {
 	display: none;
 }
-
+.footerMenu a {
+	color: white;
+	text-decoration: none;
+	transition: all 0.2s ease;
+	-webkit-transition: all 0.2s ease;
+}
+.footerMenu a:hover {
+	cursor: pointer;
+	color: #80ed99;
+	text-decoration: none;
+	list-style-type: none;
+	text-align: left;
+	padding: 0px;
+	transition: all 0.2s ease;
+	-webkit-transition: all 0.2s ease;
+}
+.footerMenu li:hover {
+	transition: all 0.2s ease;
+	-webkit-transition: all 0.2s ease;
+	background-color: #ffffff25;
+}
 @media only screen and (max-width: 700px) {
 	.navWrapper,
 	.mainMenu,

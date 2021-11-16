@@ -193,6 +193,7 @@ class Nav extends Component {
 							<FishCreate
 								sessionToken={this.props.sessionToken}
 								updateFishes={this.updateFishes}
+								fetchPost={this.fetchPost}
 							/>
 							<GearCreate
 								sessionToken={this.props.sessionToken}
@@ -227,12 +228,16 @@ class Nav extends Component {
 							COPYRIGHT © 2021 JAKE GREENE. ALL RIGHTS RESERVED.
 						</p>
 						<ul className="footerMenu">
-							<li className="footerItem">
-								<i className="fas fa-user-plus"></i>Invite a friend!
-							</li>
-							<li className="footerItem">
-								<i className="fas fa-question-circle"></i>Need Help?
-							</li>
+							<a href={"mailto:?subject=You should join GillNet!"}>
+								<li className="footerItem">
+									<i className="fas fa-user-plus"></i>Invite a friend!
+								</li>
+							</a>
+							<a href={"mailto:" + "help@gillnet.com"}>
+								<li className="footerItem">
+									<i className="fas fa-question-circle"></i>Need Help?
+								</li>
+							</a>
 						</ul>
 					</div>
 				</div>

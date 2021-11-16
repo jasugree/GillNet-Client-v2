@@ -67,7 +67,7 @@ class Home extends Component {
 												variant="top"
 												src={fish.fishImage}
 												style={{
-													height: "300px",
+													height: "250px",
 													objectFit: "cover",
 													borderRadius: "none",
 												}}

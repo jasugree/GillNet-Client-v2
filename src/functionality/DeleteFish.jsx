@@ -39,7 +39,7 @@ class DeleteFish extends Component {
 			.then((data) => {
 				console.log(data);
 				this.toggle();
-				this.props.updateGears(data, true);
+				this.props.updateFishes(data, true);
 			})
 			.catch((error) => {
 				console.log("Error", error);
