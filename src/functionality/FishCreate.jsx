@@ -48,7 +48,6 @@ class FishCreate extends Component {
 			.then((data) => {
 				console.log(data);
 				this.props.updateFishes(data, true);
-				this.props.fetchPost();
 				this.toggle();
 				window.location.reload();
 			});
