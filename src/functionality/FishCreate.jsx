@@ -49,7 +49,7 @@ class FishCreate extends Component {
 				console.log(data);
 				this.props.updateFishes(data, true);
 				this.toggle();
-				window.location.reload();
+				// window.location.reload();
 			});
 	};
 
