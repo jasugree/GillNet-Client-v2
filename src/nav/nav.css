@@ -288,7 +288,7 @@
 		margin-left: 0px !important;
 	}
 	.fishCards {
-		padding: 20px 0px;
+		padding: 00px 0px;
 	}
 	.navItem:hover {
 		padding: 20px 0px;
@@ -324,5 +324,12 @@
 	}
 	.details {
 		text-align: center;
+	}
+	.col {
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.fishCards {
+		padding-bottom: 100px !important;
 	}
 }

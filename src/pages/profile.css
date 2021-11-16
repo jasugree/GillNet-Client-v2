@@ -258,4 +258,28 @@ hr.detailBreak {
 		padding: 0px;
 		border-radius: 0px;
 	}
+	.myFish {
+		border-radius: 0px;
+		padding-right: 0px;
+		padding-left: 0px;
+		border-radius: 0px;
+		padding-bottom: 0px;
+	}
+	.catchDetails {
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+	h2 {
+		max-width: 90%;
+	}
+	.myGear {
+		margin-bottom: 100px;
+	}
+	.gearHeader {
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+	}
+	.card {
+		border-radius: 0px;
+	}
 }

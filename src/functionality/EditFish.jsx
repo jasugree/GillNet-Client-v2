@@ -79,7 +79,7 @@ class EditFish extends Component {
 					<Form onSubmit={this.handleUpdateFish}>
 						<ModalHeader toggle={this.toggle}>Update Your Catch</ModalHeader>
 						<ModalBody className="create-modal">
-							<FormGroup>
+							<FormGroup className="descrip">
 								<Label htmlFor="description">Caption</Label>
 								<Input
 									type="textarea"
@@ -115,7 +115,7 @@ class EditFish extends Component {
 									</FormGroup>
 								</Col>
 								<Col>
-									<FormGroup>
+									<FormGroup className="catch">
 										<Label htmlFor="description">Catch and Release?</Label>
 										<br />
 										<Input
@@ -181,7 +181,11 @@ class EditFish extends Component {
 							</Row>
 						</ModalBody>
 						<ModalFooter>
-							<Button id="create-button" type="submit">
+							<Button
+								id="create-button"
+								className="editProfile-button"
+								type="submit"
+							>
 								Update Catch
 							</Button>
 						</ModalFooter>

@@ -82,7 +82,7 @@ class FishCreate extends Component {
 									setImage={this.setImage}
 								/>
 							</FormGroup>
-							<FormGroup>
+							<FormGroup className="descrip">
 								<Label htmlFor="description">Caption</Label>
 								<Input
 									type="textarea"
@@ -118,7 +118,7 @@ class FishCreate extends Component {
 									</FormGroup>
 								</Col>
 								<Col>
-									<FormGroup>
+									<FormGroup className="catch">
 										<Label htmlFor="description">Catch and Release?</Label>
 										<br />
 										<Input
@@ -137,10 +137,11 @@ class FishCreate extends Component {
 							</Row>
 							<Row>
 								<Col>
-									<FormGroup>
+									<FormGroup className="weight">
 										<Label htmlFor="description">Weight</Label>
 										<InputGroup>
 											<Input
+												min="0"
 												type="number"
 												rows="1"
 												placeholder="0"
@@ -163,6 +164,7 @@ class FishCreate extends Component {
 										<Label htmlFor="description">Length</Label>
 										<InputGroup>
 											<Input
+												min="0"
 												type="number"
 												rows="1"
 												placeholder="0"
@@ -183,8 +185,8 @@ class FishCreate extends Component {
 							</Row>
 						</ModalBody>
 						<ModalFooter>
-							<Button id="create-button" type="submit">
-								Post
+							<Button className="editProfile-button" type="submit">
+								Log Your Catch!
 							</Button>
 						</ModalFooter>
 					</Form>

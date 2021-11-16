@@ -17,7 +17,7 @@ import APIURL from "../helpers/environments";
 class Login extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { username: "", password: "" };
+		this.state = { username: "", password: "", toggle: true };
 	}
 
 	handleSubmit = (e) => {
@@ -58,6 +58,13 @@ class Login extends Component {
 			});
 	};
 
+	toggle = () => {
+		this.setState({
+			toggle: !this.state.toggle,
+		});
+		console.log("clicked");
+	};
+
 	render() {
 		return (
 			<div className="wrapper">
@@ -83,7 +90,7 @@ class Login extends Component {
 						<Label className="fieldlabel">Password</Label>
 						<Input
 							className="formfield"
-							type="text"
+							type={this.state.toggle === true ? "password" : "text"}
 							onChange={(e) =>
 								this.setState({
 									password: e.target.value,
@@ -92,7 +99,15 @@ class Login extends Component {
 							name="password"
 							id="examplePassword"
 							value={this.state.password}
-							placeholder="********"
+							placeholder="Enter your password"
+						/>
+						<i
+							className={
+								this.state.toggle === true
+									? "far fa-eye-slash password-icon"
+									: "far fa-eye password-icon"
+							}
+							onClick={this.toggle}
 						/>
 					</FormGroup>
 					<Button className="loginbutton" type="submit">

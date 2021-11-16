@@ -36,7 +36,7 @@ const ProfilePic = (props) => {
 				alt=""
 			/>
 			<FormGroup id="uploader">
-				<label for="profile-image-upload" className="custom-file-upload">
+				<label for="profile-image-upload" className="custom-file-upload ">
 					<input
 						id="profile-image-upload"
 						type="file"
@@ -46,7 +46,7 @@ const ProfilePic = (props) => {
 					/>{" "}
 					<i class="fas fa-plus"></i>{" "}
 				</label>
-				{loading ? <h4>Loading...</h4> : null}
+				{loading ? <h4 style={{ color: "white" }}>Loading...</h4> : null}
 			</FormGroup>
 		</div>
 	);

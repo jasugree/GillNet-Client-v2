@@ -77,11 +77,13 @@ class DeleteFish extends Component {
 				</span>
 				<Modal isOpen={this.state.modal} toggle={this.toggle}>
 					<ModalHeader toggle={this.toggle}>Delete Fish</ModalHeader>
-					<ModalBody className="create-modal">
-						<p style={{ color: "red" }}>
-							Are you sure you want to delete this post?
-						</p>
-						<Button id="create-button" onClick={this.handleDeleteFish}>
+					<ModalBody className="delete-modal">
+						<p>Are you sure you want to delete this post?</p>
+						<Button
+							id="create-button"
+							className="editProfile-button"
+							onClick={this.handleDeleteFish}
+						>
 							Delete Catch
 						</Button>
 					</ModalBody>

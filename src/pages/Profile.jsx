@@ -117,6 +117,7 @@ class Profile extends Component {
 															<div className="likeRelease">
 																<span className="likes">
 																	<LikeFish
+																		user={this.props.user}
 																		fish={fish}
 																		updateFishes={this.props.updateFishes}
 																		sessionToken={this.props.sessionToken}
@@ -193,7 +194,7 @@ class Profile extends Component {
 						</div>
 					</Col>
 					<Col>
-						<div className="myFish">
+						<div className="myFish myGear">
 							<h2>{this.props.user?.firstName}'s Gear</h2>
 							<Row lg={1} className="g-4 myFishCards">
 								{this.props.gears

@@ -25,12 +25,13 @@
 }
 
 input.formfield,
-#state {
-	background-color: transparent;
-	border-radius: 1000px;
+#state,
+.form-select {
+	background-color: transparent !important;
+	border-radius: 1000px !important;
 	border: #57cc99 2px solid;
 	color: #63869d;
-	padding: 0.75em;
+	padding: 0.75em !important;
 	font-family: "Assistant", sans-serif;
 	letter-spacing: 0.03em;
 }
@@ -38,7 +39,9 @@ input.formfield,
 input.formfield::placeholder {
 	color: #ffffff50;
 }
-
+option {
+	max-height: 30px;
+}
 input.formfield:focus {
 	background-color: transparent;
 	border: #80ed99 2px solid !important;
@@ -126,6 +129,12 @@ input:-webkit-autofill:active {
 .auth-logo {
 	width: 300px;
 	margin: auto;
+}
+.state.mb-3 {
+	margin-bottom: 0px !important;
+}
+.state.mb-3 {
+	margin-bottom: 0px !important;
 }
 @media only screen and (max-width: 700px) {
 	.row {

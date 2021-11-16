@@ -293,6 +293,7 @@ class Nav extends Component {
 					</Route>
 					<Route exact path="/profile">
 						<Profile
+							users={this.state.users}
 							fishes={this.state.fishes}
 							sessionToken={this.props.sessionToken}
 							updateFishes={this.updateFishes}

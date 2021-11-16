@@ -72,15 +72,17 @@ class Others extends Component {
 											</div>
 											<div className="message">
 												<div>
-													<a href={"mailto:" + user?.fishes.length}>
-														<Button>Message</Button>
+													<a href={"mailto:" + user?.email}>
+														<Button className="editProfile-button">
+															Message
+														</Button>
 													</a>
 												</div>
 												<div
 													style={{
 														display:
 															this.props.user.admin === true ? "auto" : "none",
-														marginLeft: "30px",
+														marginLeft: "10px",
 													}}
 												>
 													<AdminDeleteUser

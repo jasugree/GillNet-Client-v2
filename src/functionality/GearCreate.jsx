@@ -70,12 +70,14 @@ class GearCreate extends Component {
 						<ModalHeader toggle={this.toggle}>Add Your Gear</ModalHeader>
 						<ModalBody className="create-modal">
 							<FormGroup>
-								<Label htmlFor="description">Gear Type</Label>
+								<Label className="fieldlabel">Gear Type</Label>
 								<Input
+									className="formfield"
 									type="select"
 									rows="1"
 									placeholder="Please Select a Gear"
 									name="gear type"
+									id="state"
 									onChange={(e) =>
 										this.setState({
 											gearType: e.target.value,
@@ -129,7 +131,8 @@ class GearCreate extends Component {
 							<FormGroup>
 								<Label htmlFor="description">Price</Label>
 								<Input
-									type="textarea"
+									min="0"
+									type="number"
 									rows="1"
 									placeholder="0"
 									name="description"
@@ -145,7 +148,9 @@ class GearCreate extends Component {
 							<FormGroup>
 								<Label htmlFor="description">User Rating</Label>
 								<Input
-									type="textarea"
+									min="0"
+									max="5"
+									type="number"
 									rows="1"
 									placeholder="0"
 									name="description"
@@ -160,8 +165,12 @@ class GearCreate extends Component {
 							</FormGroup>
 						</ModalBody>
 						<ModalFooter>
-							<Button id="create-button" type="submit">
-								Post
+							<Button
+								id="create-button"
+								className="editProfile-button"
+								type="submit"
+							>
+								Post Your Gear
 							</Button>
 						</ModalFooter>
 					</Form>

@@ -59,7 +59,7 @@ class AdminDeleteUser extends Component {
 	render() {
 		return (
 			<div>
-				<Button color="danger" onClick={this.toggle}>
+				<Button className="delete" onClick={this.toggle}>
 					<i class="fas fa-trash-alt" style={{ marginRight: "0px" }}></i>
 				</Button>
 				<Modal isOpen={this.state.modal} toggle={this.toggle}>

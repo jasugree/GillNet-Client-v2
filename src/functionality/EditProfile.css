@@ -110,10 +110,9 @@ input.formfield:focus {
 
 .form-control,
 #state {
-	width: 100%;
 	padding: 15px 25px;
 	border: #57cc99 2px solid;
-	border-radius: 10px;
+	border-radius: 300px;
 	margin: auto;
 	margin-bottom: 15px;
 	resize: none;
@@ -175,4 +174,10 @@ input.form-check-input {
 #state:focus {
 	box-shadow: none !important;
 	border-color: #80ed99;
+}
+textarea.form-control {
+	border-radius: 5000px;
+}
+.descrip textarea {
+	border-radius: 30px !important;
 }

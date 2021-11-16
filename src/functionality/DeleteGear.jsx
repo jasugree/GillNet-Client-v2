@@ -65,11 +65,13 @@ class DeleteGear extends Component {
 				</span>
 				<Modal isOpen={this.state.modal} toggle={this.toggle}>
 					<ModalHeader toggle={this.toggle}>Delete Gear</ModalHeader>
-					<ModalBody className="create-modal">
-						<p style={{ color: "red" }}>
-							Are you sure you want to delete this Gear?
-						</p>
-						<Button id="create-button" onClick={this.handleDeleteGear}>
+					<ModalBody className="delete-modal">
+						<p>Are you sure you want to delete this Gear?</p>
+						<Button
+							id="create-button"
+							className="editProfile-button"
+							onClick={this.handleDeleteGear}
+						>
 							Delete Catch
 						</Button>
 					</ModalBody>

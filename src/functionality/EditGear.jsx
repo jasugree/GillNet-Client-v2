@@ -147,7 +147,11 @@ class EditGear extends Component {
 							</FormGroup>
 						</ModalBody>
 						<ModalFooter>
-							<Button id="create-button" type="submit">
+							<Button
+								id="create-button"
+								type="submit"
+								className="editProfile-button"
+							>
 								Update Catch
 							</Button>
 						</ModalFooter>

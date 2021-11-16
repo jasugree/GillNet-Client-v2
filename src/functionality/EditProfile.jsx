@@ -116,6 +116,7 @@ class EditProfile extends Component {
 									<FormGroup>
 										<Label htmlFor="description">Last Name</Label>
 										<Input
+											id="description"
 											type="textarea"
 											rows="1"
 											name="description"
@@ -130,7 +131,7 @@ class EditProfile extends Component {
 									<FormGroup>
 										<Label htmlFor="description">Email</Label>
 										<Input
-											type="textarea"
+											type="email"
 											rows="1"
 											name="description"
 											onChange={(e) =>
@@ -143,7 +144,7 @@ class EditProfile extends Component {
 									</FormGroup>
 								</Col>
 							</Row>
-							<FormGroup>
+							<FormGroup className="descrip">
 								<Label htmlFor="description">Description</Label>
 								<Input
 									type="textarea"
@@ -162,7 +163,8 @@ class EditProfile extends Component {
 									<FormGroup>
 										<Label htmlFor="description">Age</Label>
 										<Input
-											type="textarea"
+											min="0"
+											type="number"
 											rows="1"
 											name="description"
 											onChange={(e) =>
@@ -291,7 +293,7 @@ class EditProfile extends Component {
 						</ModalBody>
 						<ModalFooter>
 							<Button className="editProfile-button" type="submit">
-								Log Your New Catch!
+								Update Your Profile
 							</Button>
 						</ModalFooter>
 					</Form>

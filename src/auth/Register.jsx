@@ -52,6 +52,12 @@ class Register extends Component {
 				return;
 			});
 	};
+	toggle = () => {
+		this.setState({
+			toggle: !this.state.toggle,
+		});
+		console.log("clicked");
+	};
 
 	render() {
 		return (
@@ -113,11 +119,12 @@ class Register extends Component {
 							</FormGroup>
 						</Col>
 						<Col>
-							<FormGroup>
-								<Label className="fieldlabel ">State</Label>
+							<FormGroup className="state">
+								<Label className="fieldlabel">State</Label>
 								<Input
 									className="formfield"
 									type="select"
+									rows="1"
 									onChange={(e) =>
 										this.setState({
 											state: e.target.value,
@@ -189,7 +196,7 @@ class Register extends Component {
 						<Label className="fieldlabel">Password</Label>
 						<Input
 							className="formfield"
-							type="password"
+							type={this.state.toggle === true ? "password" : "text"}
 							onChange={(e) =>
 								this.setState({
 									password: e.target.value,
@@ -199,8 +206,16 @@ class Register extends Component {
 							id="examplePassword"
 							placeholder="********"
 						/>
+						<i
+							className={
+								this.state.toggle === true
+									? "far fa-eye-slash password-icon"
+									: "far fa-eye password-icon"
+							}
+							onClick={this.toggle}
+						/>
 					</FormGroup>
-					<Button className="loginbutton">Sign In</Button>
+					<Button className="loginbutton">Register</Button>
 				</Form>
 				<p className="switch">
 					Already on GillNet?{" "}
