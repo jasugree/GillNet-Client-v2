@@ -36,7 +36,6 @@ class DeleteFish extends Component {
 		})
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(data);
 				this.props.updateFishes(data, true);
 				this.props.fetchPost();
 				this.props.fetchUsers();
@@ -44,7 +43,6 @@ class DeleteFish extends Component {
 				this.toggle();
 			})
 			.catch((error) => {
-				console.log("Error", error);
 				alert("Something went wrong. Please try again.");
 				return;
 			});
@@ -60,7 +58,6 @@ class DeleteFish extends Component {
 		this.setState({
 			modal: !this.state.modal,
 		});
-		console.log("clicked");
 	};
 
 	render() {

@@ -44,8 +44,6 @@ class GearCreate extends Component {
 		})
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(data);
-
 				this.props.updateGears(data, true);
 				this.toggle();
 				// window.location.reload();

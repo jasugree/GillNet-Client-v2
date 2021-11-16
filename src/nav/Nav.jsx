@@ -35,7 +35,6 @@ class Nav extends Component {
 		})
 			.then((res) => res.json())
 			.then((UserData) => {
-				console.log(UserData);
 				this.setState({ users: UserData });
 			})
 			.catch((error) => {
@@ -56,12 +55,9 @@ class Nav extends Component {
 		})
 			.then((res) => res.json())
 			.then((myGear) => {
-				console.log(myGear);
-				console.log("&*&&*&*& MY GEAR");
 				this.setState({ gears: myGear });
 			})
 			.catch((error) => {
-				console.log("Error", error);
 				alert("Something went wrong. Please try again. MINE");
 				return;
 			});
@@ -79,11 +75,9 @@ class Nav extends Component {
 		})
 			.then((res) => res.json())
 			.then((feedData) => {
-				console.log(feedData);
 				this.setState({ fishes: feedData });
 			})
 			.catch((error) => {
-				console.log("Error", error);
 				alert("Something went wrong. GET ALL FISH.");
 				return;
 			});
@@ -149,8 +143,6 @@ class Nav extends Component {
 
 		let greeting = "Hello there";
 
-		console.log(curHr);
-
 		if (curHr > 22 || curHr < 6) {
 			greeting = "Good Night,";
 		} else if (curHr < 12) {
@@ -161,13 +153,6 @@ class Nav extends Component {
 			greeting = "Good Evening,";
 		}
 
-		const userName = localStorage.getItem("userName");
-		const profileImage = localStorage.getItem("profileImage");
-		const firstName = localStorage.getItem("firstName");
-		console.log(typeof profileImage);
-		console.log(firstName);
-		console.log("RIGHT HERE^^^ ");
-		console.log("RIGHT HERE^^^ ");
 		return (
 			<div className="fullNav">
 				<div className="navWrapper">

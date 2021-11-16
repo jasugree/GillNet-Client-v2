@@ -16,20 +16,16 @@ class LikeFish extends Component {
 		})
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(data);
 				this.props.updateFishes(data, true);
 				// window.location.reload();
 			})
 			.catch((error) => {
-				console.log("Error", error);
 				alert("Something went wrong. Please try again.LIKING");
 				return;
 			});
 	};
 
 	render() {
-		console.log("LOOK AT FISHY!!!");
-		console.log(this.props.fish.likes);
 		const userid = localStorage.getItem("userid");
 
 		return (

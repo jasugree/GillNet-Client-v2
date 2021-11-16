@@ -37,7 +37,6 @@ class Register extends Component {
 		})
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(data);
 				if (!data.sessionToken) {
 					alert(
 						"One or more fields is not properly filled out. Please try again."
@@ -45,9 +44,11 @@ class Register extends Component {
 					return;
 				}
 				this.props.updateToken(data.sessionToken);
+				this.props.history.push("/home");
+				this.props.updateUser(data.user);
+				window.location.reload();
 			})
 			.catch((error) => {
-				console.log("Error", error);
 				alert("Something went wrong. Please try again.");
 				return;
 			});
@@ -56,7 +57,6 @@ class Register extends Component {
 		this.setState({
 			toggle: !this.state.toggle,
 		});
-		console.log("clicked");
 	};
 
 	render() {

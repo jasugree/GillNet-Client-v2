@@ -37,13 +37,11 @@ class AdminDeleteUser extends Component {
 		})
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(data);
 				this.toggle();
 				this.props.updateUsers(data, true);
 				// this.props.updateGears(data, true);
 			})
 			.catch((error) => {
-				console.log("Error", error);
 				alert("Something went wrong. Please try again. DELETING USER");
 				return;
 			});
@@ -53,7 +51,6 @@ class AdminDeleteUser extends Component {
 		this.setState({
 			modal: !this.state.modal,
 		});
-		console.log("clicked");
 	};
 
 	render() {

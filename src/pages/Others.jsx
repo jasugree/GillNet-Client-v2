@@ -25,9 +25,6 @@ class Others extends Component {
 	}
 
 	render() {
-		console.log(this.props.user);
-		console.log("USERS ARE ABOVE^^^");
-
 		return (
 			<div className="userWrapper">
 				{!!this.props.users &&

@@ -26,11 +26,9 @@ class App extends Component {
 			})
 				.then((res) => res.json())
 				.then((json) => {
-					console.log(json.user);
 					this.setState({ user: json.user });
 				})
 				.catch((error) => {
-					console.log("Error", error);
 					alert("Something went wrong. Please try again. AUTHORIZE");
 					return;
 				});

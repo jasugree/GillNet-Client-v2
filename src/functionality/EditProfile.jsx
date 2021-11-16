@@ -39,7 +39,6 @@ class EditProfile extends Component {
 		})
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(data);
 				this.toggle();
 				this.props.updateUser(this.state);
 				// window.location.reload();
@@ -68,8 +67,6 @@ class EditProfile extends Component {
 	};
 
 	render() {
-		console.log(this.props.user);
-		console.log("MARCOOOOOOOOO");
 		return (
 			<div>
 				<div className="editProfile" onClick={this.toggle}>

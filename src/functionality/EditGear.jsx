@@ -37,12 +37,10 @@ class EditGear extends Component {
 		})
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(data);
 				this.toggle();
 				this.props.updateGears(data, true);
 			})
 			.catch((error) => {
-				console.log("Error", error);
 				alert("Something went wrong. Please try again.");
 				return;
 			});
@@ -52,7 +50,6 @@ class EditGear extends Component {
 		this.setState({
 			modal: !this.state.modal,
 		});
-		console.log("clicked");
 	};
 
 	componentDidUpdate(prevprops, prevstate) {

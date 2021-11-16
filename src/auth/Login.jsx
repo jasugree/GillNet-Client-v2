@@ -34,25 +34,16 @@ class Login extends Component {
 		})
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(data);
 				if (!data.sessionToken) {
 					alert("Username or Password is incorrect. Please try again.");
 					return;
 				}
 				this.props.updateToken(data.sessionToken);
 				this.props.history.push("/home");
-				console.log(data.user);
-				console.log("GO HERE GO HERE");
-				// localStorage.setItem("profileImage",data.user.profileImage)
-				// localStorage.setItem("userName",data.user.userName)
-				// localStorage.setItem("userid",data.user.id)
-				// localStorage.setItem("firstName",data.user.firstName)
-				// localStorage.setItem("lastName",data.user.lastName)
 				this.props.updateUser(data.user);
 				window.location.reload();
 			})
 			.catch((error) => {
-				console.log("Error", error);
 				alert("Something went wrong. Please try again. LOGIN");
 				return;
 			});
@@ -62,7 +53,6 @@ class Login extends Component {
 		this.setState({
 			toggle: !this.state.toggle,
 		});
-		console.log("clicked");
 	};
 
 	render() {

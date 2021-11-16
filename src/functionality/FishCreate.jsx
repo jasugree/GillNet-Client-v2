@@ -46,7 +46,6 @@ class FishCreate extends Component {
 		})
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(data);
 				this.props.updateFishes(data, true);
 				this.toggle();
 				this.setState({
