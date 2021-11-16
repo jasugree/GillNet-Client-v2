@@ -64,10 +64,10 @@ class Home extends Component {
 												<div className="userName">{fish?.user?.userName}</div>
 											</div>
 											<CardImg
+												className="fishies"
 												variant="top"
 												src={fish.fishImage}
 												style={{
-													height: "250px",
 													objectFit: "cover",
 													borderRadius: "none",
 												}}

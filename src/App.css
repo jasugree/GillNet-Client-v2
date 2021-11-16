@@ -44,9 +44,16 @@
 	border-bottom-right-radius: 20px;
 	border-bottom-left-radius: 20px;
 }
+
+.fishies {
+	height: 250px;
+}
 @media only screen and (max-width: 700px) {
 	.password-icon {
 		left: 87%;
+	}
+	.fishies {
+		height: 350px;
 	}
 }
 @keyframes App-logo-spin {
