@@ -48,7 +48,16 @@
 .fishies {
 	height: 250px;
 }
+.fishies.profile.card-img {
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
 @media only screen and (max-width: 700px) {
+	.fishies.profile.card-img {
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+	}
 	.password-icon {
 		left: 87%;
 	}

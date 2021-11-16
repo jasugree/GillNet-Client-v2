@@ -104,12 +104,11 @@ class Profile extends Component {
 											<Col key={index}>
 												<Card>
 													<CardImg
+														className="fishies profile"
 														variant="top"
 														src={fish.fishImage}
 														style={{
-															height: "200px",
 															objectFit: "cover",
-															borderRadius: "none",
 														}}
 													/>
 													<CardBody>

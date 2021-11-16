@@ -122,7 +122,8 @@ class EditGear extends Component {
 							<FormGroup>
 								<Label htmlFor="description">Price</Label>
 								<Input
-									type="textarea"
+									min="0"
+									type="number"
 									rows="1"
 									placeholder="Brown Trout, Catfish..."
 									name="description"
@@ -138,7 +139,9 @@ class EditGear extends Component {
 							<FormGroup>
 								<Label htmlFor="description">User Rating</Label>
 								<Input
-									type="textarea"
+									min="0"
+									max="5"
+									type="number"
 									rows="1"
 									placeholder="Brown Trout, Catfish..."
 									name="description"

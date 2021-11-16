@@ -147,6 +147,7 @@ class EditFish extends Component {
 											<Input
 												type="number"
 												rows="1"
+												min="0"
 												placeholder="0"
 												onChange={(e) =>
 													this.setState({
@@ -169,6 +170,7 @@ class EditFish extends Component {
 											<Input
 												type="number"
 												rows="1"
+												min="0"
 												placeholder="0"
 												onChange={(e) =>
 													this.setState({
