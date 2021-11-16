@@ -45,9 +45,10 @@ class GearCreate extends Component {
 			.then((response) => response.json())
 			.then((data) => {
 				console.log(data);
+
+				this.props.updateGears(data, true);
 				this.toggle();
-				// this.props.updateFishes(data);
-				window.location.reload();
+				// window.location.reload();
 			});
 	};
 

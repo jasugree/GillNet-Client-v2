@@ -112,6 +112,8 @@ class Home extends Component {
 																fish={fish}
 																updateFishes={this.props.updateFishes}
 																sessionToken={this.props.sessionToken}
+																fetchUsers={this.props.fetchUsers}
+																fetchPost={this.props.fetchPost}
 															/>
 														</div>
 													</div>

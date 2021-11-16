@@ -55,6 +55,12 @@ class EditFish extends Component {
 		console.log("clicked");
 	};
 
+	componentDidUpdate(prevprops, prevstate) {
+		if (prevprops.fish !== this.props.fish) {
+			this.setState({ ...this.props.fish });
+		}
+	}
+
 	render() {
 		const userName = localStorage.getItem("userName");
 		return (

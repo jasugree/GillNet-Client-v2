@@ -199,6 +199,7 @@ class Nav extends Component {
 								sessionToken={this.props.sessionToken}
 								updateFishes={this.updateFishes}
 								updateGears={this.updateGears}
+								fetchMyGear={this.fetchMyGear}
 							/>
 							<Link to="/others">
 								<li className="navItem">
@@ -276,6 +277,7 @@ class Nav extends Component {
 							updateFishes={this.updateFishes}
 							user={this.props.user}
 							fetchPost={this.fetchPost}
+							fetchUsers={this.fetchUsers}
 						/>
 					</Route>
 					<Route exact path="/nearby">

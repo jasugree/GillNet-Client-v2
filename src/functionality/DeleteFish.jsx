@@ -29,7 +29,6 @@ class DeleteFish extends Component {
 		e.preventDefault();
 		fetch(`${APIURL}/fish/delete/${this.state.id}`, {
 			method: "DELETE",
-			body: JSON.stringify(this.state),
 			headers: new Headers({
 				"Content-Type": "application/json",
 				Authorization: this.props.sessionToken,
@@ -38,8 +37,11 @@ class DeleteFish extends Component {
 			.then((response) => response.json())
 			.then((data) => {
 				console.log(data);
-				this.toggle();
 				this.props.updateFishes(data, true);
+				this.props.fetchPost();
+				this.props.fetchUsers();
+
+				this.toggle();
 			})
 			.catch((error) => {
 				console.log("Error", error);
@@ -47,6 +49,12 @@ class DeleteFish extends Component {
 				return;
 			});
 	};
+
+	componentDidUpdate(prevprops, prevstate) {
+		if (prevprops.fish !== this.props.fish) {
+			this.setState({ ...this.props.fish });
+		}
+	}
 
 	toggle = () => {
 		this.setState({

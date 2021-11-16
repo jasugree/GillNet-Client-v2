@@ -55,6 +55,12 @@ class EditGear extends Component {
 		console.log("clicked");
 	};
 
+	componentDidUpdate(prevprops, prevstate) {
+		if (prevprops.gear !== this.props.gear) {
+			this.setState({ ...this.props.gear });
+		}
+	}
+
 	render() {
 		return (
 			<div>

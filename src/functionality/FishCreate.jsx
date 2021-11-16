@@ -49,6 +49,15 @@ class FishCreate extends Component {
 				console.log(data);
 				this.props.updateFishes(data, true);
 				this.toggle();
+				this.setState({
+					modal: false,
+					fishImage: "",
+					species: "",
+					weight: 0,
+					length: 0,
+					catchAndRelease: false,
+					caption: "",
+				});
 				// window.location.reload();
 			});
 	};
