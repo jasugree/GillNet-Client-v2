@@ -82,7 +82,6 @@ class Others extends Component {
 													style={{
 														display:
 															this.props.user.admin === true ? "auto" : "none",
-														marginLeft: "10px",
 													}}
 												>
 													<AdminDeleteUser
