@@ -38,7 +38,7 @@ class DeleteFish extends Component {
 			.then((data) => {
 				this.props.updateFishes(data, true);
 				// this.props.fetchPost();
-				this.props.fetchUsers();
+				// this.props.fetchUsers();
 
 				this.toggle();
 			})
